@@ -6,11 +6,11 @@ app = Flask(__name__, static_folder='.')
 def serve_home():
     return render_template('home.html')
 
-@app.route('/skintype.html')
+@app.route('/skintype')
 def serve_skintype():
     return render_template('skintype.html')
 
-@app.route('/foundation.html')
+@app.route('/foundation')
 def serve_foundation():
     return render_template('foundation.html')
 
