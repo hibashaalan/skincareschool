@@ -15,6 +15,5 @@ def serve_foundation():
     return render_template('foundation.html')
 
 
-
 if __name__ == '__main__':
     app.run(debug=True)

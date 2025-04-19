@@ -1,30 +1,163 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container my-5">
-    <p class="lead mb-4">Learn about different skintypes</p>
+  <p class="lead mb-4"> The Fundamentals of a Simple Routine </p>
+  <h6> click each step to learn more </h6>
 
-    <div class="row mb-4">
-        <div class="col-md-4">
-            <h3>Cleanser</h3>
+  <div class="row mb-4">
+    <!-- Cleanser -->
+    <div class="col-md-4">
+      <a href="#" data-toggle="modal" data-target="#cleanserModal" style="text-decoration: none; color: inherit;">
+        <div class="info-card">
+          <h3>Cleanser</h3>
         </div>
-        <div class="col-md-4">
-            <h3>Toner</h3>
-        </div>
-        <div class="col-md-4">
-            <h3>Serum</h3>
-        </div>
+      </a>
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Eye Cream</h3>
+    <!-- Toner -->
+    <div class="col-md-4">
+      <a href="#" data-toggle="modal" data-target="#tonerModal" style="text-decoration: none; color: inherit;">
+        <div class="info-card">
+          <h3>Toner</h3>
         </div>
-        <div class="col-md-4">
-            <h3>Sunscreen</h3>
-        </div>
-        <div class="col-md-4">
-            <h3>Moisturizer</h3>
-        </div>
+      </a>
     </div>
+
+    <!-- Serum -->
+    <div class="col-md-4">
+      <a href="#" data-toggle="modal" data-target="#serumModal" style="text-decoration: none; color: inherit;">
+        <div class="info-card">
+          <h3>Serum</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Eye Cream -->
+    <div class="col-md-4">
+      <a href="#" data-toggle="modal" data-target="#eyeCreamModal" style="text-decoration: none; color: inherit;">
+        <div class="info-card">
+          <h3>Eye Cream</h3>
+        </div>
+      </a>
+    </div>
+
+    <!-- Sunscreen -->
+    <div class="col-md-4">
+      <a href="#" data-toggle="modal" data-target="#sunscreenModal" style="text-decoration: none; color: inherit;">
+        <div class="info-card">
+          <h3>Sunscreen</h3>
+        </div>
+      </a>
+    </div>
+
+    <!-- Moisturizer -->
+    <div class="col-md-4">
+      <a href="#" data-toggle="modal" data-target="#moisturizerModal" style="text-decoration: none; color: inherit;">
+        <div class="info-card">
+          <h3>Moisturizer</h3>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
+
+<!-- Modals -->
+
+<!-- Cleanser Modal -->
+<div class="modal fade" id="cleanserModal" tabindex="-1" role="dialog" aria-labelledby="cleanserModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cleanserModalLabel">Cleanser</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+        </div>
+        <div class="modal-body d-flex align-items-center">
+            <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
+            <p class="mb-0 text-left">
+            Cleansers remove dirt, oil, and makeup from your skin.
+            Use both an oil-based and a water-based cleanser for a thorough cleanse.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Toner Modal -->
+<div class="modal fade" id="tonerModal" tabindex="-1" role="dialog" aria-labelledby="tonerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tonerModalLabel">Toner</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        Toners help to restore your skin’s pH balance and prepare it for serums and moisturizers.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Serum Modal -->
+<div class="modal fade" id="serumModal" tabindex="-1" role="dialog" aria-labelledby="serumModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title" id="serumModalLabel">Serum</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        Serums contain concentrated active ingredients like Vitamin C or Hyaluronic Acid that target specific skin concerns.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Eye Cream Modal -->
+<div class="modal fade" id="eyeCreamModal" tabindex="-1" role="dialog" aria-labelledby="eyeCreamModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eyeCreamModalLabel">Eye Cream</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        Eye creams help reduce puffiness, dark circles, and fine lines around the delicate eye area.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sunscreen Modal -->
+<div class="modal fade" id="sunscreenModal" tabindex="-1" role="dialog" aria-labelledby="sunscreenModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sunscreenModalLabel">Sunscreen</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        Sunscreen protects your skin from UV rays. Apply daily, even when it's cloudy or you're indoors.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Moisturizer Modal -->
+<div class="modal fade" id="moisturizerModal" tabindex="-1" role="dialog" aria-labelledby="moisturizerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title" id="moisturizerModalLabel">Moisturizer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        Moisturizers hydrate and lock in moisture to keep your skin soft, smooth, and healthy.
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
