@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     {% block styles %}
     <style>
         body {
@@ -98,7 +101,7 @@
                 <a class="nav-link" href="{{url_for('serve_foundation')}}">routine</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Quiz<span class="sr-only"></span></a>
+                <a class="nav-link" href="/quiz1">Quiz<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Case Study<span class="sr-only"></span></a>
@@ -111,10 +114,5 @@
     {% block content %}{% endblock %}
   </main>
 
-  {% block scripts %}
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  {% endblock %}
 </body>
 </html>
