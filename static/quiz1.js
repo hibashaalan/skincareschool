@@ -1,4 +1,5 @@
-let options = []
+let options = [];
+let i = 0;
 
 function feedback(index) {
     $("#quiz1-row").empty();
@@ -20,19 +21,30 @@ function feedback(index) {
     let feedbackcol = $("<div>");
     $(feedbackcol).addClass("col-3 feedback");
     feedbackcol.text(options[index]["feedback"]);
-
-    $("#quiz1-row").append(facecol);
-    $("#quiz1-row").append(col);
-    $("#quiz1-row").append(feedbackcol);
-    
     if (options[index]["correct"] == 1) feedbackcol.css("color", "green");
     else feedbackcol.css("color", "red");
 
 
+    let next = $("<button>");
+    next.text("Next");
+    next.addClass("btn btn-primary");
+    next.attr("id", "next-btn");
+    feedbackcol.append(next);
+
+    $("#quiz1-row").append(facecol);
+    $("#quiz1-row").append(col);
+    $("#quiz1-row").append(feedbackcol);
+
+    $("#next-btn").on("click", function() {
+        if (i==1) get_question(i);
+        if (i==2) window.location.href = "/quiz2";
+    });
 }
 
 function display(options, i) {
     $("#quiz1-row").empty();
+    $("#quiz1-question").text(options[i*4]["desc"]);
+
     for (j=0; j<4; j++) {
         let index = i*4 + j
         let col = $("<div>");
@@ -45,12 +57,13 @@ function display(options, i) {
             img.addClass("quiz1-option");
             img.attr("id", index);
         }
-
-        let desc = $("<div>");
-        desc.text(options[index]["desc"]);
-
         col.append(img);
-        col.append(desc);
+        if (j!=0) {
+            let desc = $("<div>");
+            desc.text(options[index]["desc"]);
+            col.append(desc);
+        }
+
         $("#quiz1-row").append(col);
     }
 }
@@ -76,10 +89,11 @@ function get_question(i) {
 
 }
 $(document).ready(function(){
-    get_question(0);
+    get_question(i);
 })
 
 $(document).on("click", ".quiz1-option", function () {
+    i++;
     let index = $(this).attr("id");
     feedback(index);
 });

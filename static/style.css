@@ -124,4 +124,9 @@ body {
     cursor:pointer;
 } .feedback {
   padding-top:100px;
+  text-align:left;
+} #next-btn {
+  display:block;
+  margin-top:10px;
+
 }
