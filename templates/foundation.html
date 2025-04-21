@@ -9,7 +9,7 @@
     <div class="col-md-4">
       <a href="#" data-toggle="modal" data-target="#cleanserModal" style="text-decoration: none; color: inherit;">
         <div class="info-card">
-          <h3>Cleanser</h3>
+          <h3>1. Cleanser</h3>
         </div>
       </a>
     </div>
@@ -18,7 +18,7 @@
     <div class="col-md-4">
       <a href="#" data-toggle="modal" data-target="#tonerModal" style="text-decoration: none; color: inherit;">
         <div class="info-card">
-          <h3>Toner</h3>
+          <h3>2. Toner</h3>
         </div>
       </a>
     </div>
@@ -27,7 +27,7 @@
     <div class="col-md-4">
       <a href="#" data-toggle="modal" data-target="#serumModal" style="text-decoration: none; color: inherit;">
         <div class="info-card">
-          <h3>Serum</h3>
+          <h3>3. Serum</h3>
         </div>
       </a>
     </div>
@@ -38,7 +38,7 @@
     <div class="col-md-4">
       <a href="#" data-toggle="modal" data-target="#eyeCreamModal" style="text-decoration: none; color: inherit;">
         <div class="info-card">
-          <h3>Eye Cream</h3>
+          <h3>4. Eye Cream</h3>
         </div>
       </a>
     </div>
@@ -47,7 +47,7 @@
     <div class="col-md-4">
       <a href="#" data-toggle="modal" data-target="#sunscreenModal" style="text-decoration: none; color: inherit;">
         <div class="info-card">
-          <h3>Sunscreen</h3>
+          <h3>5. Sunscreen</h3>
         </div>
       </a>
     </div>
@@ -56,7 +56,7 @@
     <div class="col-md-4">
       <a href="#" data-toggle="modal" data-target="#moisturizerModal" style="text-decoration: none; color: inherit;">
         <div class="info-card">
-          <h3>Moisturizer</h3>
+          <h3>6. Moisturizer</h3>
         </div>
       </a>
     </div>
@@ -93,8 +93,11 @@
         <h5 class="modal-title" id="tonerModalLabel">Toner</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body d-flex align-items-center">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
+        <p class="mb-0 text-left">
         Toners help to restore your skin’s pH balance and prepare it for serums and moisturizers.
+      </p>
       </div>
     </div>
   </div>
@@ -108,8 +111,11 @@
         <h5 class="modal-title" id="serumModalLabel">Serum</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body d-flex align-items-center">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
+        <p class="mb-0 text-left">
         Serums contain concentrated active ingredients like Vitamin C or Hyaluronic Acid that target specific skin concerns.
+      </p>
       </div>
     </div>
   </div>
@@ -123,8 +129,11 @@
         <h5 class="modal-title" id="eyeCreamModalLabel">Eye Cream</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body d-flex align-items-center">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
+        <p class="mb-0 text-left">
         Eye creams help reduce puffiness, dark circles, and fine lines around the delicate eye area.
+      </p>
       </div>
     </div>
   </div>
@@ -138,8 +147,11 @@
         <h5 class="modal-title" id="sunscreenModalLabel">Sunscreen</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body d-flex align-items-center">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
+        <p class="mb-0 text-left">
         Sunscreen protects your skin from UV rays. Apply daily, even when it's cloudy or you're indoors.
+      </p>
       </div>
     </div>
   </div>
@@ -153,8 +165,11 @@
         <h5 class="modal-title" id="moisturizerModalLabel">Moisturizer</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body d-flex align-items-center">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
+        <p class="mb-0 text-left">
         Moisturizers hydrate and lock in moisture to keep your skin soft, smooth, and healthy.
+      </p>
       </div>
     </div>
   </div>
