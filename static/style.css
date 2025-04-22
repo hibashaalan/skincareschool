@@ -37,7 +37,6 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
   .cta-button:hover {
     background-color: #357ab8;
   }
@@ -101,6 +100,12 @@ body {
     text-align: center;
     cursor: pointer;
     margin-bottom: 30px; /* Increased bottom margin for more space between rows */
+  }
+  .info-card-content {
+    display: flex;
+    flex-direction: column; /* makes items stack top to bottom */
+    align-items: flex-start; /* aligns text to the left */
+    text-align: left; /* makes text read left-to-right */
   }
   
   /* Adjusting the layout of the page for better overall spacing */

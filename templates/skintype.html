@@ -2,53 +2,31 @@
 {% block content %}
 <div class="container my-5">
   <p class="lead mb-4">Learn about different skin types</p>
+  <h6>Click each skin type to learn more</h6>
 
   <div class="row">
-    <!-- Normal Skin -->
+    <!-- Skin Type Cards -->
+    {% for skin in [
+      {'id': 'normal', 'label': 'Normal Skin'},
+      {'id': 'oily', 'label': 'Oily Skin'},
+      {'id': 'dry', 'label': 'Dry Skin'},
+      {'id': 'combo', 'label': 'Combination Skin'}
+    ] %}
     <div class="col-md-3">
-      <a href="#" data-toggle="modal" data-target="#normalModal" class="card-link">
+      <a href="#" data-toggle="modal" data-target="#{{ skin.id }}Modal" class="card-link">
         <div class="info-card">
-          <h3>Normal Skin</h3>
-          <p>Even texture, even tone, small pores, blemish-free</p>
+          <h3>{{ skin.label }}</h3>
+          <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="{{ skin.label }}" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
         </div>
       </a>
     </div>
-
-    <!-- Oily Skin -->
-    <div class="col-md-3">
-      <a href="#" data-toggle="modal" data-target="#oilyModal" class="card-link">
-        <div class="info-card">
-          <h3>Oily Skin</h3>
-          <p>Shiny appearance, enlarged pores, prone to acne</p>
-        </div>
-      </a>
-    </div>
-
-    <!-- Dry Skin -->
-    <div class="col-md-3">
-      <a href="#" data-toggle="modal" data-target="#dryModal" class="card-link">
-        <div class="info-card">
-          <h3>Dry Skin</h3>
-          <p>Coarse texture, tight pores, visible fine lines</p>
-        </div>
-      </a>
-    </div>
-
-    <!-- Combination Skin -->
-    <div class="col-md-3">
-      <a href="#" data-toggle="modal" data-target="#comboModal" class="card-link">
-        <div class="info-card">
-          <h3>Combination Skin</h3>
-          <p>Large pores, dry in some areas, blemished</p>
-        </div>
-      </a>
-    </div>
+    {% endfor %}
   </div>
 </div>
 
 <!-- Modals -->
 
-<!-- Normal Modal -->
+<!-- Normal Skin Modal -->
 <div class="modal fade" id="normalModal" tabindex="-1" role="dialog" aria-labelledby="normalModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content p-3">
@@ -56,14 +34,23 @@
         <h5 class="modal-title" id="normalModalLabel">Normal Skin</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
-        Normal skin is well-balanced, not too oily or dry. It features smooth texture, small pores, and even tone.
+      <div class="modal-body d-flex align-items-start">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Normal Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
+        <div class="text-left">
+          <p>Normal skin is well-balanced, not too oily or dry. It has a smooth texture and even tone. It is less prone to breakouts and irritation.</p>
+          <ul>
+            <li>Even texture</li>
+            <li>Even tone</li>
+            <li>Small pores</li>
+            <li>Blemish free</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Oily Modal -->
+<!-- Oily Skin Modal -->
 <div class="modal fade" id="oilyModal" tabindex="-1" role="dialog" aria-labelledby="oilyModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content p-3">
@@ -71,14 +58,22 @@
         <h5 class="modal-title" id="oilyModalLabel">Oily Skin</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
-        Oily skin produces excess sebum, leading to shine, visible pores, and frequent breakouts. Look for lightweight, non-comedogenic products.
+      <div class="modal-body d-flex align-items-start">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Oily Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
+        <div class="text-left">
+          <p>Oily skin produces excess sebum, leading to shine, visible pores, and frequent breakouts. Look for lightweight, non-comedogenic products.</p>
+          <ul>
+            <li>Shiny appearance</li>
+            <li>Enlarged pores</li>
+            <li>Prone to acne and blackheads</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Dry Modal -->
+<!-- Dry Skin Modal -->
 <div class="modal fade" id="dryModal" tabindex="-1" role="dialog" aria-labelledby="dryModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content p-3">
@@ -86,14 +81,22 @@
         <h5 class="modal-title" id="dryModalLabel">Dry Skin</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
-        Dry skin often feels tight, rough, and flaky. Use hydrating ingredients like hyaluronic acid and avoid harsh cleansers.
+      <div class="modal-body d-flex align-items-start">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Dry Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
+        <div class="text-left">
+          <p>Dry skin lacks moisture and can feel tight or rough. It may appear dull and flaky. Look for rich, hydrating products.</p>
+          <ul>
+            <li>Coarse texture</li>
+            <li>Tight pores</li>
+            <li>Visible fine lines</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Combination Modal -->
+<!-- Combination Skin Modal -->
 <div class="modal fade" id="comboModal" tabindex="-1" role="dialog" aria-labelledby="comboModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content p-3">
@@ -101,8 +104,17 @@
         <h5 class="modal-title" id="comboModalLabel">Combination Skin</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
-      <div class="modal-body">
-        Combination skin features both dry and oily areas. The T-zone may be shiny while the cheeks remain dry.
+      <div class="modal-body d-flex align-items-start">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Combination Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
+        <div class="text-left">
+          <p>Combination skin features both dry and oily areas. The T-zone may be shiny while the cheeks remain dry.</p>
+          <ul>
+            <li>Large pores</li>
+            <li>Thicker texture</li>
+            <li>Dry in some areas</li>
+            <li>Blemished</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
