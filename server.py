@@ -70,32 +70,62 @@ quiz2_questions = [
     "id":0,
     "question": "Pick a cleanser that best suits Amira",
     "options": ["Gel-based with salicylic acid", "cleanser 2", "cleanser 2"],
-    "correct": 0
+    "correct": 0,
+    "images": [
+            {"src": "cleanser.png", "caption": "Cleanser 1"},
+            {"src": "cleanser.png", "caption": "Cleanser 2"},
+            {"src": "cleanser.png", "caption": "Cleanser 3"},
+        ]
     },{
     "id":1,
     "question": "Pick a toner that best suits Amira",
     "options": ["toner 1", "toner 2", "Witch hazel to balance oil"],
-    "correct": 2
+    "correct": 2,
+    "images": [
+            {"src": "toner_rose.jpeg", "caption": "Toner 1"},
+            {"src": "toner_rose.jpeg", "caption": "Toner 2"},
+            {"src": "toner_rose.jpeg", "caption": "Toner 3"},
+        ]
     },{
     "id":2,
     "question": "Pick a serum that best suits Amira",
     "options": ["serum 1", "serum 2", "serum 3"],
-    "correct": 0
+    "correct": 0,
+    "images": [
+            {"src": "serum_nia.jpeg", "caption": "Serum 1"},
+            {"src": "serum_nia.jpeg", "caption": "Serum 2"},
+            {"src": "serum_nia.jpeg", "caption": "Serum 3"},
+        ]
     },{
     "id":3,
     "question": "Pick an eye cream that best suits Amira",
     "options": ["cream 1", "cream 2", "cream 3"],
-    "correct": 1
+    "correct": 1,
+    "images": [
+            {"src": "placeholder.png", "caption": "Eye cream 1"},
+            {"src": "placeholder.png", "caption": "Eye cream 2"},
+            {"src": "placeholder.png", "caption": "Eye cream 3"},
+        ]
     },{
     "id":4,
     "question": "Pick a moisturizer that best suits Amira",
     "options": ["moisturizer 1", "moisturizer 2", "moisturizer 3"],
-    "correct": 1
+    "correct": 1,
+    "images": [
+            {"src": "placeholder.png", "caption": "Moisturizer 1"},
+            {"src": "placeholder.png", "caption": "Moisturizer 2"},
+            {"src": "placeholder.png", "caption": "Moisturizer 3"},
+        ]
     },{
     "id":5,
     "question": "Pick a sunscreen that best suits Amira",
     "options": ["sunscreen 1", "sunscreen 2", "sunscreen 3"],
-    "correct": 1
+    "correct": 1,
+    "images": [
+            {"src": "placeholder.png", "caption": "Sunscreen 1"},
+            {"src": "placeholder.png", "caption": "Sunscreen 2"},
+            {"src": "placeholder.png", "caption": "Sunscreen 3"},
+        ]
     },
 ]
 
@@ -133,13 +163,25 @@ def quiz2_results():
     user_answers = request.form.to_dict()
     score = 0
     total = len(quiz2_questions)
+    results = []
 
     for q in quiz2_questions:
-        user_choice = user_answers.get(f"q{q['id']}")
-        if user_choice is not None and int(user_choice) == q["correct"]:
-            score += 1
+        question_id = q["id"]
+        user_choice_str = user_answers.get(f"q{question_id}")
+        
+        if user_choice_str is not None:
+            user_choice = int(user_choice_str)
+            is_correct = user_choice == q["correct"]
+            if is_correct:
+                score += 1
 
-    return render_template("quiz2_results.html", score=score, total=total)
+            results.append({
+                "question": q["question"],
+                "is_correct": is_correct,
+                "image": q["images"][user_choice],  # image is a dict with 'src' and 'caption'
+            })
+
+    return render_template("quiz2_results.html", score=score, total=total, results=results)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)

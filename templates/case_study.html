@@ -2,25 +2,46 @@
 {% block content %}
     
     <h3>Quiz: Help Amira Build Her Routine</h3>
-    
+
     <form id="case-study-quiz" method="POST" action="{{ url_for('quiz2_results') }}">
         <button type="button" class="cta-button mb-3" id="show-amira-info">Amira's Info</button>
         {% for q in questions %}
         <div class="quiz-page" id="question-{{ q.id }}" style="display: {% if loop.first %}block{% else %}none{% endif %};">
             <p><strong>{{ q.question }}</strong></p>
-            {% for option in q.options %}
-            <div class="form-check">
-                <input class="form-check-input"
-                       type="radio"
-                       name="q{{ q.id }}"
-                       value="{{ loop.index0 }}"
-                       id="q{{ q.id }}o{{ loop.index0 }}">
-                <label class="form-check-label" for="q{{ q.id }}o{{ loop.index0 }}">{{ option }}</label>
+
+            <!-- Amira's image on the top of the page -->
+            <div class="container-fluid mb-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6">
+                        <img src="{{ url_for('static', filename='images/amira.png') }}" class="img-fluid rounded mx-auto d-block" alt="Amira's Image">
+                    </div>
+                </div>
             </div>
-            {% endfor %}
+
+            <!-- Options row below the image -->
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    {% for option in q.options %}
+                    <div class="col-12 col-md-4 mb-4 text-center">
+                        <label for="q{{ q.id }}o{{ loop.index0 }}" class="d-block">
+                            <input class="form-check-input d-none"
+                                type="radio"
+                                name="q{{ q.id }}"
+                                value="{{ loop.index0 }}"
+                                id="q{{ q.id }}o{{ loop.index0 }}">
+                            <img src="{{ url_for('static', filename='images/' ~ q.images[loop.index0].src) }}"
+                                alt="{{ q.images[loop.index0].caption }}"
+                                class="img-fluid rounded border img-option"
+                                style="cursor: pointer;">
+                            <p class="mt-2">{{ q.images[loop.index0].caption }}</p>
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
         {% endfor %}
-    
+
         <div class="quiz-nav mt-4">
             <button type="button" class="cta-button" id="prev-question" style="display:none;">Previous</button>
             <button type="button" class="cta-button" id="next-question">Next</button>
@@ -36,16 +57,16 @@
 
     <div id="amira-info-modal" class="modal" style="display: none;">
         <div class="modal-content">
-          <span id="close-modal" class="close-button">&times;</span>
-          <div class="info-card">
-            <h3>Meet Amira</h3>
-            <p><strong>Skin Type:</strong> Oily</p>
-            <p><strong>Concerns:</strong> Frequent breakouts, visible pores, dark undereye circles, and makeup melts quickly during the day.</p>
-            <p><strong>Lifestyle:</strong> Lives in a humid climate, wears sunscreen and light makeup daily</p>
-            <p>Amira wants a skincare routine that helps with oil control and acne prevention while keeping her skin healthy and hydrated.</p>
-          </div>
+            <span id="close-modal" class="close-button">&times;</span>
+            <div class="info-card">
+                <h3>Meet Amira</h3>
+                <p><strong>Skin Type:</strong> Oily</p>
+                <p><strong>Concerns:</strong> Frequent breakouts, visible pores, dark undereye circles, and makeup melts quickly during the day.</p>
+                <p><strong>Lifestyle:</strong> Lives in a humid climate, wears sunscreen and light makeup daily</p>
+                <p>Amira wants a skincare routine that helps with oil control and acne prevention while keeping her skin healthy and hydrated.</p>
+            </div>
         </div>
-      </div>
+    </div>
 
     <script src="{{ url_for('static', filename='quiz2.js') }}"></script>
 

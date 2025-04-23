@@ -1,8 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="info-card mt-5">
-    <h2>Quiz Results</h2>
-    <p>You got <strong>{{ score }}</strong> out of <strong>{{ total }}</strong> correct.</p>
-    <a href="{{ url_for('serve_quiz2') }}" class="cta-button mt-3">Try Again</a>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        <div class="info-card">
+          <h2>Quiz Results</h2>
+          <p>You got <strong>{{ score }}</strong> out of <strong>{{ total }}</strong> correct.</p>
+
+          <h4>Your Selections:</h4>
+          <div class="row">
+            {% for q in questions %}
+            <div class="col-12 col-md-4 mb-4">
+              <img src="{{ url_for('static', filename='images/' ~ q.images[loop.index0].src) }}"
+                  alt="{{ q.images[loop.index0].caption }}"
+                  class="img-fluid rounded border {{ 'border-success' if user_answers.get('q' + q.id) == q.correct else 'border-danger' }}">
+              <p class="text-center">{{ q.images[loop.index0].caption }}</p>
+            </div>
+            {% endfor %}
+          </div>
+
+          <a href="{{ url_for('serve_quiz2') }}" class="cta-button mt-3">Try Again</a>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}

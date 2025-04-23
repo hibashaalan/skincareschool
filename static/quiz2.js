@@ -37,4 +37,9 @@ $(document).ready(function () {
         $('#amira-info-modal').fadeOut();
     });
     
+    $(document).on("change", "input[type=radio]", function () {
+        const group = $(this).attr("name");
+        $(`input[name=${group}]`).closest("label").removeClass("selected");
+        $(this).closest("label").addClass("selected");
+    });
 });
