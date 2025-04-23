@@ -137,9 +137,9 @@ body {
 }
 
 /* quiz2 */
-.correct {
-  border-left: 4px solid green;
-  background-color: #e6ffed;
+  .correct {
+    border-left: 4px solid green;
+    background-color: #e6ffed;
 }.incorrect {
   border-left: 4px solid red;
   background-color: #ffe6e6;
@@ -170,4 +170,14 @@ body {
 }.selected img {
   border: 3px solid #003cff;
   box-shadow: 0 0 10px rgba(46, 134, 222, 0.4);
+}/* Custom styling for images in the quiz results */
+  .img-option {
+    max-height: 200px; /* Restrict image size */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+  /* Ensure the quiz results page has some padding for smaller screens */
+  @media (max-width: 767px) {
+    .info-card {
+      padding: 20px;
+    }
 }

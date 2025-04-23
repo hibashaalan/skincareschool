@@ -1,23 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="container-fluid mt-5">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8">
-        <div class="info-card">
-          <h2>Quiz Results</h2>
+  <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="row w-100 justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="info-card text-center p-4" style="max-height: 90vh; overflow-y: auto;">
+          <h2 class="mb-3">Quiz Results</h2>
           <p>You got <strong>{{ score }}</strong> out of <strong>{{ total }}</strong> correct.</p>
 
-          <h4>Your Selections:</h4>
-          <div class="row">
-            {% for q in questions %}
-            <div class="col-12 col-md-4 mb-4">
-              <img src="{{ url_for('static', filename='images/' ~ q.images[loop.index0].src) }}"
-                  alt="{{ q.images[loop.index0].caption }}"
-                  class="img-fluid rounded border {{ 'border-success' if user_answers.get('q' + q.id) == q.correct else 'border-danger' }}">
-              <p class="text-center">{{ q.images[loop.index0].caption }}</p>
+          <h4 class="mt-4">Your Selections:</h4>
+            <div class="row justify-content-center">
+              {% for r in results %}
+              <div class="col-6 col-md-4 mb-4 d-flex flex-column align-items-center">
+                <img src="{{ url_for('static', filename='images/' ~ r.image.src) }}"
+                    alt="{{ r.image.caption }}"
+                    class="img-fluid rounded border {{ 'border-success' if r.is_correct else 'border-danger' }}"
+                    style="border-width: 4px; max-height: 120px; object-fit: contain;">
+                <p class="mt-2 small">{{ r.image.caption }}</p>
+                <p class="small {{ 'text-success' if r.is_correct else 'text-danger' }}">
+                  {{ 'Correct' if r.is_correct else 'Incorrect' }}
+                </p>
+              </div>
+              {% endfor %}
             </div>
-            {% endfor %}
-          </div>
 
           <a href="{{ url_for('serve_quiz2') }}" class="cta-button mt-3">Try Again</a>
         </div>
@@ -25,3 +29,4 @@
     </div>
   </div>
 {% endblock %}
+

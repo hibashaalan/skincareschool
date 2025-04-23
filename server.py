@@ -102,9 +102,9 @@ quiz2_questions = [
     "options": ["cream 1", "cream 2", "cream 3"],
     "correct": 1,
     "images": [
-            {"src": "placeholder.png", "caption": "Eye cream 1"},
-            {"src": "placeholder.png", "caption": "Eye cream 2"},
-            {"src": "placeholder.png", "caption": "Eye cream 3"},
+            {"src": "eye_cream.png", "caption": "Eye cream 1"},
+            {"src": "eye_cream.png", "caption": "Eye cream 2"},
+            {"src": "eye_cream.png", "caption": "Eye cream 3"},
         ]
     },{
     "id":4,
@@ -112,9 +112,9 @@ quiz2_questions = [
     "options": ["moisturizer 1", "moisturizer 2", "moisturizer 3"],
     "correct": 1,
     "images": [
-            {"src": "placeholder.png", "caption": "Moisturizer 1"},
-            {"src": "placeholder.png", "caption": "Moisturizer 2"},
-            {"src": "placeholder.png", "caption": "Moisturizer 3"},
+            {"src": "moisturizer.png", "caption": "Moisturizer 1"},
+            {"src": "moisturizer.png", "caption": "Moisturizer 2"},
+            {"src": "moisturizer.png", "caption": "Moisturizer 3"},
         ]
     },{
     "id":5,
@@ -122,9 +122,9 @@ quiz2_questions = [
     "options": ["sunscreen 1", "sunscreen 2", "sunscreen 3"],
     "correct": 1,
     "images": [
-            {"src": "placeholder.png", "caption": "Sunscreen 1"},
-            {"src": "placeholder.png", "caption": "Sunscreen 2"},
-            {"src": "placeholder.png", "caption": "Sunscreen 3"},
+            {"src": "sunscreen.png", "caption": "Sunscreen 1"},
+            {"src": "sunscreen.png", "caption": "Sunscreen 2"},
+            {"src": "sunscreen.png", "caption": "Sunscreen 3"},
         ]
     },
 ]

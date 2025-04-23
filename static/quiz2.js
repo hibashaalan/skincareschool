@@ -14,9 +14,34 @@ $(document).ready(function () {
     }
 
     $('#next-question').click(function () {
+        // Get current question page
+        const currentPage = pages.eq(currentIndex);
+    
+        // Check if a radio input is selected
+        const selected = currentPage.find('input[type=radio]:checked').length > 0;
+    
+        if (!selected) {
+            currentPage.find('.quiz-options').addClass('border border-danger rounded p-2');
+            setTimeout(() => {
+                currentPage.find('.quiz-options').removeClass('border border-danger');
+            }, 2000);
+            alert('Please select an option before proceeding.');
+            return;
+        }
+    
         if (currentIndex < pages.length - 1) {
             currentIndex++;
             showPage(currentIndex);
+        }
+    });
+
+    $('#case-study-quiz').submit(function (e) {
+        const currentPage = pages.eq(currentIndex);
+        const selected = currentPage.find('input[type=radio]:checked').length > 0;
+    
+        if (!selected) {
+            e.preventDefault(); // Prevent form submission
+            alert('Please select an option before submitting.');
         }
     });
 
