@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='quiz2.js') }}"></script>
+
+    <div class="info-card">
+        <h3>Meet Amira</h3>
+        <p><strong>Skin Type:</strong> Oily</p>
+        <p><strong>Concerns:</strong> Frequent breakouts, visible pores, dark undereye circles, and makeup melts quickly during the day.</p>
+        <p><strong>Lifestyle:</strong> Lives in a humid climate, wears sunscreen and light makeup daily</p>
+        <p>Amira wants a skincare routine that helps with oil control and acne prevention while keeping her skin healthy and hydrated. What ingredients and products would you recommend?</p>
+    </div>
+
+    <div class="mt-5">
+        <!-- Button to take the quiz -->
+        <a href="{{ url_for('case_study') }}" class="cta-button">Take the Quiz</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="info-card mt-5">
+    <h2>Quiz Results</h2>
+    <p>You got <strong>{{ score }}</strong> out of <strong>{{ total }}</strong> correct.</p>
+    <a href="{{ url_for('serve_quiz2') }}" class="cta-button mt-3">Try Again</a>
+  </div>
+{% endblock %}

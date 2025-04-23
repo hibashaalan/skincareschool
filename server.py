@@ -65,6 +65,40 @@ quiz1arr = [
 }, 
 ]
 
+quiz2_questions = [
+    {
+    "id":0,
+    "question": "Pick a cleanser that best suits Amira",
+    "options": ["Gel-based with salicylic acid", "cleanser 2", "cleanser 2"],
+    "correct": 0
+    },{
+    "id":1,
+    "question": "Pick a toner that best suits Amira",
+    "options": ["toner 1", "toner 2", "Witch hazel to balance oil"],
+    "correct": 2
+    },{
+    "id":2,
+    "question": "Pick a serum that best suits Amira",
+    "options": ["serum 1", "serum 2", "serum 3"],
+    "correct": 0
+    },{
+    "id":3,
+    "question": "Pick an eye cream that best suits Amira",
+    "options": ["cream 1", "cream 2", "cream 3"],
+    "correct": 1
+    },{
+    "id":4,
+    "question": "Pick a moisturizer that best suits Amira",
+    "options": ["moisturizer 1", "moisturizer 2", "moisturizer 3"],
+    "correct": 1
+    },{
+    "id":5,
+    "question": "Pick a sunscreen that best suits Amira",
+    "options": ["sunscreen 1", "sunscreen 2", "sunscreen 3"],
+    "correct": 1
+    },
+]
+
 @app.route('/')
 def serve_home():
     return render_template('home.html')
@@ -86,7 +120,26 @@ def quiz1():
 def quiz1_questions():
     return jsonify(quiz1arr = quiz1arr)
 
+@app.route("/quiz2")
+def serve_quiz2():
+    return render_template("quiz2.html", questions=quiz2_questions)
 
+@app.route("/case-study")
+def case_study():
+    return render_template("case_study.html", questions=quiz2_questions)
+
+@app.route("/quiz2/results", methods=["POST"])
+def quiz2_results():
+    user_answers = request.form.to_dict()
+    score = 0
+    total = len(quiz2_questions)
+
+    for q in quiz2_questions:
+        user_choice = user_answers.get(f"q{q['id']}")
+        if user_choice is not None and int(user_choice) == q["correct"]:
+            score += 1
+
+    return render_template("quiz2_results.html", score=score, total=total)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)

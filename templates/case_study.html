@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <h3>Quiz: Help Amira Build Her Routine</h3>
+    
+    <form id="case-study-quiz" method="POST" action="{{ url_for('quiz2_results') }}">
+        <button type="button" class="cta-button mb-3" id="show-amira-info">Amira's Info</button>
+        {% for q in questions %}
+        <div class="quiz-page" id="question-{{ q.id }}" style="display: {% if loop.first %}block{% else %}none{% endif %};">
+            <p><strong>{{ q.question }}</strong></p>
+            {% for option in q.options %}
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="radio"
+                       name="q{{ q.id }}"
+                       value="{{ loop.index0 }}"
+                       id="q{{ q.id }}o{{ loop.index0 }}">
+                <label class="form-check-label" for="q{{ q.id }}o{{ loop.index0 }}">{{ option }}</label>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    
+        <div class="quiz-nav mt-4">
+            <button type="button" class="cta-button" id="prev-question" style="display:none;">Previous</button>
+            <button type="button" class="cta-button" id="next-question">Next</button>
+            <button class="cta-button" type="submit" id="submit-quiz" style="display:none;">Submit Answers</button>
+        </div>
+    </form>
+
+    <div id="quiz-progress" style="position: fixed; bottom: 20px; right: 20px; display: flex; gap: 6px;">
+        {% for q in questions %}
+        <div class="progress-dot" style="width: 12px; height: 12px; border-radius: 50%; background-color: {% if loop.first %}#2e86de{% else %}#ccc{% endif %};"></div>
+        {% endfor %}
+    </div>
+
+    <div id="amira-info-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span id="close-modal" class="close-button">&times;</span>
+          <div class="info-card">
+            <h3>Meet Amira</h3>
+            <p><strong>Skin Type:</strong> Oily</p>
+            <p><strong>Concerns:</strong> Frequent breakouts, visible pores, dark undereye circles, and makeup melts quickly during the day.</p>
+            <p><strong>Lifestyle:</strong> Lives in a humid climate, wears sunscreen and light makeup daily</p>
+            <p>Amira wants a skincare routine that helps with oil control and acne prevention while keeping her skin healthy and hydrated.</p>
+          </div>
+        </div>
+      </div>
+
+    <script src="{{ url_for('static', filename='quiz2.js') }}"></script>
+
+{% endblock %}
