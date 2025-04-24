@@ -65,6 +65,15 @@ quiz1arr = [
 }, 
 ]
 
+quiz1answers = [ 
+    {
+        "id":"0",
+        "q1":"",
+        "q2":"",
+        "score":0,
+    },
+]
+
 quiz2_questions = [
     {
     "id":0,
@@ -149,6 +158,13 @@ def quiz1():
 @app.route('/quiz1_questions')
 def quiz1_questions():
     return jsonify(quiz1arr = quiz1arr)
+
+@app.route('/quiz1_answers', methods=["GET", "POST"])
+def quiz1_answers():
+    answers = request.get_json()
+    answers["id"] = len(quiz1answers)
+    quiz1answers.append(answers)
+    return jsonify(answer = answers)
 
 @app.route("/quiz2")
 def serve_quiz2():

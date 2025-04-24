@@ -1,5 +1,58 @@
 let options = [];
 let i = 0;
+let answers = {
+    id:"0",
+    q1:"",
+    q2:"",
+    score:0,
+};
+
+function transitionPage() {
+    $("#quiz1-row").empty();
+    $("#quiz1-question").empty();
+    let score = $("<div>");
+    score.text("Your Score: " + answers["score"] + "/2");
+    $("#quiz1-row").append(score);
+
+
+    let retake = $("<button>");
+    retake.text("Retake Quiz 1");
+    retake.addClass("btn btn-primary");
+    retake.attr("id", "retake-btn");
+    $("#quiz1-row").append(retake);
+
+    let next = $("<button>");
+    next.text("Continue to Quiz 2");
+    next.addClass("btn btn-primary");
+    next.attr("id", "next-btn");
+    $("#quiz1-row").append(next);
+
+    $("#retake-btn").on("click", function() {
+        location.reload();
+    });
+
+    $("#next-btn").on("click", function() {
+        window.location.href = "/quiz2";
+    });
+}
+
+function post_answers() {
+    $.ajax({
+        type:"POST",
+        url:"quiz1_answers",
+        dataType:"json",
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(answers),
+        success: function(){  
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    })
+}
 
 function feedback(index) {
     $("#quiz1-row").empty();
@@ -37,7 +90,7 @@ function feedback(index) {
 
     $("#next-btn").on("click", function() {
         if (i==1) get_question(i);
-        if (i==2) window.location.href = "/quiz2";
+        if (i==2) transitionPage();
     });
 }
 
@@ -93,7 +146,14 @@ $(document).ready(function(){
 })
 
 $(document).on("click", ".quiz1-option", function () {
-    i++;
     let index = $(this).attr("id");
+    if (options[index]["correct"]) answers["score"] +=1;
+    if (i==0) answers["q1"] = index;
+    if (i==1) {
+        answers["q2"] = index;
+        post_answers();
+    }
+    i++;
     feedback(index);
+
 });
