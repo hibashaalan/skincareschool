@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script> 
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="{{url_for('serve_home')}}">Skincare School</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -19,16 +20,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('serve_skintype')}}">skin types</a>
+                <a class="nav-link" href="{{url_for('serve_skintype')}}">Skin Types</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('serve_foundation')}}">routine</a>
+                <a class="nav-link" href="{{url_for('serve_foundation')}}">Routine</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/quiz1">Quiz<span class="sr-only"></span></a>
+                <a class="nav-link" href="/quiz1">Multiple Choice Quiz<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('serve_quiz2') }}">Case Study<span class="sr-only"></span></a>
+              <a class="nav-link" href="{{ url_for('serve_quiz2') }}">Case Study Quiz<span class="sr-only"></span></a>
             </li>
           </ul>
         </div>
