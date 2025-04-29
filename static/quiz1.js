@@ -10,7 +10,9 @@ let answers = {
 function transitionPage() {
     $("#quiz1-row").empty();
     $("#quiz1-question").empty();
+    $("#quiz1-progress").empty();
     let score = $("<div>");
+    score.attr("id", "quiz1-score");
     score.text("Your Score: " + answers["score"] + "/2");
     $("#quiz1-row").append(score);
 
@@ -71,10 +73,14 @@ function feedback(index) {
     img.addClass("quiz1-option-clicked");
     col.append(img);
 
+    let desc = $("<div>");
+    desc.text(options[index]["desc"]);
+    col.append(desc);
+
     let feedbackcol = $("<div>");
     $(feedbackcol).addClass("col-3 feedback");
     feedbackcol.text(options[index]["feedback"]);
-    if (options[index]["correct"] == 1) feedbackcol.css("color", "green");
+    if (options[index]["correct"] == 1) feedbackcol.css("color", "#6aa84f");
     else feedbackcol.css("color", "red");
 
 
@@ -82,6 +88,8 @@ function feedback(index) {
     next.text("Next");
     next.addClass("btn btn-primary");
     next.attr("id", "next-btn");
+    if (options[index]["correct"] == 1) next.css("background-color", "#6aa84f");
+    else next.css("background-color", "red");
     feedbackcol.append(next);
 
     $("#quiz1-row").append(facecol);
@@ -118,6 +126,14 @@ function display(options, i) {
         }
 
         $("#quiz1-row").append(col);
+    }
+
+    if (i==0) {
+        $("#quiz1-progress-dot2").css("background-color", "#ccc");
+        $("#quiz1-progress-text").text("Progress: 1/2");
+    } else {
+        $("#quiz1-progress-dot2").css("background-color", "#6aa84f");
+        $("#quiz1-progress-text").text("Progress: 2/2");
     }
 }
 

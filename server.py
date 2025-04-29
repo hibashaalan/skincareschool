@@ -9,12 +9,12 @@ quiz1arr = [
     "id":"0",
     "img": "/static/images/combo_skin.png",
     "alt": "combination skin",
-    "desc": "Choose a toner for combination skin:",
+    "desc": "1. Choose a toner for combination skin:",
     "feeback":"",
     "correct":0
 }, {
     "id":"1",
-    "img": "/static/images/toner_rose.jpeg",
+    "img": "/static/images/toner_rose.png",
     "alt": "rosewater toner",
     "desc": "Rosewater toner",
     "feedback":"Correct! Rosewater is a great ingredient for combination skin because "
@@ -22,14 +22,14 @@ quiz1arr = [
     "correct":1
 }, {
     "id":"2",
-    "img":"/static/images/toner_aloe.jpeg",
+    "img":"/static/images/toner_aloe.png",
     "alt":"aloe toner",
     "desc":"Aloe toner",
     "feedback":"Incorrect! Aloe is a better ingredient for dry skin.",
     "correct":0
 }, {
     "id":"3",
-    "img":"/static/images/toner_witchhazel.jpeg",
+    "img":"/static/images/toner_witchhazel.png",
     "alt":"witch hazel toner",
     "desc":"Witch hazel toner",
     "feedback":"Incorrect! Witch hazel is a better ingredient for oily skin.",
@@ -38,26 +38,26 @@ quiz1arr = [
     "id":"4",
     "img":"/static/images/normal_skin.png",
     "alt":"normal skin",
-    "desc":"Choose a serum for brightening:",
+    "desc":"2. Choose a serum for brightening:",
     "feedback":"",
     "correct":0
 }, {
     "id":"5",
-    "img":"/static/images/serum_nia.jpeg",
+    "img":"/static/images/serum_nia.png",
     "alt":"niacinamide serum",
     "desc":"Niacinamide serum",
     "feedback":"Incorrect! Niacinamide is a better ingredient for acne concerns.",
     "correct":0
 }, {
     "id":"6",
-    "img":"/static/images/serum_vitc.jpeg",
+    "img":"/static/images/serum_vitc.png",
     "alt":"vitamin c serum",
     "desc":"Vitamin C serum",
     "feedback":"Correct! Vitamin C is a great ingredient for any brightening concerns.",
     "correct":1
 }, {
     "id":"7",
-    "img":"/static/images/serum_ha.jpeg",
+    "img":"/static/images/serum_ha.png",
     "alt":"hyaluronic acid serum",
     "desc":"Hyaluronic acid serum",
     "feedback":"Incorrect! Hyaluronic acid is a better ingredient for hydration concerns",
@@ -91,9 +91,9 @@ quiz2_questions = [
     "options": ["toner 1", "toner 2", "Witch hazel to balance oil"],
     "correct": 2,
     "images": [
-            {"src": "toner_rose.jpeg", "caption": "Toner 1"},
-            {"src": "toner_rose.jpeg", "caption": "Toner 2"},
-            {"src": "toner_rose.jpeg", "caption": "Toner 3"},
+            {"src": "toner_rose.png", "caption": "Toner 1"},
+            {"src": "toner_rose.png", "caption": "Toner 2"},
+            {"src": "toner_rose.png", "caption": "Toner 3"},
         ]
     },{
     "id":2,
@@ -101,9 +101,9 @@ quiz2_questions = [
     "options": ["serum 1", "serum 2", "serum 3"],
     "correct": 0,
     "images": [
-            {"src": "serum_nia.jpeg", "caption": "Serum 1"},
-            {"src": "serum_nia.jpeg", "caption": "Serum 2"},
-            {"src": "serum_nia.jpeg", "caption": "Serum 3"},
+            {"src": "serum_nia.png", "caption": "Serum 1"},
+            {"src": "serum_nia.png", "caption": "Serum 2"},
+            {"src": "serum_nia.png", "caption": "Serum 3"},
         ]
     },{
     "id":3,

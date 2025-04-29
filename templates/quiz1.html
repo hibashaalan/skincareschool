@@ -3,11 +3,18 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename='quiz1.js') }}"></script> 
 
-<div>Quiz Part 1</div>
+<div class="quiz-heading">Multiple Choice Quiz</div>
 
 <div id="quiz1-question"></div>
 <div class="row" id="quiz1-row">
+</div>
 
+<div id="quiz1-progress">
+    <table id="quiz1-progress-table"><tr>
+    <td id="quiz1-progress-dot1"></td>
+    <td id="quiz1-progress-dot2"></td>
+    </tr></table>
+    <div id="quiz1-progress-text">Progress:</div>
 </div>
 
 {% endblock %}
