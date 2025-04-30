@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container my-5">
-  <p class="lead mb-4">Learn about different skin types</p>
-  <h6>Click each skin type to learn more</h6>
+<h2 class="text-center">Skin Types</h2>
+<p class="lead mb-4">Learn about different skin types</p>
 
+<div class="container my-5">
+  <h6>Click each skin type to learn more</h6>
   <div class="row">
     <!-- Skin Type Cards -->
     {% for skin in [
       {'id': 'normal', 'label': 'Normal Skin'},
       {'id': 'oily', 'label': 'Oily Skin'},
       {'id': 'dry', 'label': 'Dry Skin'},
-      {'id': 'combo', 'label': 'Combination Skin'}
+      {'id': 'combo', 'label': 'Combo Skin'}
     ] %}
     <div class="col-md-3">
       <a href="#" data-toggle="modal" data-target="#{{ skin.id }}Modal" class="card-link">
@@ -120,4 +121,7 @@
     </div>
   </div>
 </div>
+
+<button class="cta-button" onclick="location.href='foundation'">Continue</button>
+
 {% endblock %}
