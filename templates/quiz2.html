@@ -3,26 +3,39 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename='quiz2.js') }}"></script>
 
-    <div class="container py-4" style="max-width: 800px;">
-        <div class="info-card text-center">
-        <h3>Amira, the Glowy Girl</h3>
-    
-        <!-- Amira's image on the top of the page -->
-        <img src="{{ url_for('static', filename='images/amira.png') }}"
-            class="img-fluid rounded mx-auto d-block mb-3"
-            alt="Amira's Image"
-            style="max-width: 200px;">
-    
-            <p><strong>Skin Type:</strong> Oily</p>
-            <p><strong>Concerns:</strong> Frequent breakouts, visible pores, dark undereye circles, and makeup melts quickly during the day.</p>
-            <p><strong>Lifestyle:</strong> Lives in a humid climate, wears sunscreen and light makeup daily</p>
-            <p>Amira wants a skincare routine that helps with oil control and acne prevention while keeping her skin healthy and hydrated. What ingredients and products would you recommend?</p>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <h3>Amira, the Glowy Girl</h3>
+            </div>
+        </div>
+        
+        <!-- Amira's Picture -->
+        <div class="row mt-5">
+            <div class="col-4 info-card">
+                <img src="{{ url_for('static', filename='images/amira.png') }}"
+                    class="img-fluid rounded mx-auto d-block mb-3"
+                    alt="Amira's Image"
+                    style="max-width: 200px;">
+            </div>
+
+            <!-- Amira's Info -->
+            <div class="col-8 info-card">
+                <p><strong>Skin Type:</strong> Oily</p>
+                <p><strong>Concerns:</strong> Frequent breakouts, visible pores, dark undereye circles, and makeup melts quickly during the day.</p>
+                <p><strong>Lifestyle:</strong> Lives in a humid climate, wears sunscreen and light makeup daily</p>
+                <p>Amira wants a skincare routine that helps with oil control and acne prevention while keeping her skin healthy and hydrated. What ingredients and products would you recommend?</p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+            <!-- Button to take the quiz -->
+                <a href="{{ url_for('case_study') }}" class="cta-button">Take the Quiz</a>
+            </div>
         </div>
     </div>
-
-    <div class="mt-5">
-        <!-- Button to take the quiz -->
-        <a href="{{ url_for('case_study') }}" class="cta-button">Take the Quiz</a>
-    </div>
 {% endblock %}
+
 
