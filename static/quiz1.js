@@ -18,22 +18,35 @@ function transitionPage() {
 
 
     let retake = $("<button>");
-    retake.text("Retake Quiz 1");
-    retake.addClass("btn btn-primary");
+    let retakeArrow = $("<div>");
+    retakeArrow.text("←");
+    retakeArrow.css("font-size", "60px");
+    retake.append(retakeArrow);
+    let retakeText =  $("<div>");
+    retakeText.text("Retake Multiple Choice Quiz");
+    retake.append(retakeArrow);
+    retake.append(retakeText);
+    retake.addClass("btn btn-primary text-right");
     retake.attr("id", "retake-btn");
     $("#quiz1-row").append(retake);
 
-    let next = $("<button>");
-    next.text("Continue to Quiz 2");
-    next.addClass("btn btn-primary");
-    next.attr("id", "next-btn");
-    $("#quiz1-row").append(next);
+    let nextQuiz = $("<button>");
+    let nextArrow = $("<div>");
+    nextArrow.text("→");
+    nextArrow.css("font-size", "60px");
+    nextQuiz.append(nextArrow);
+    let nextText = $("<div>");
+    nextText.text("Continue to Case Study");
+    nextQuiz.append(nextText);
+    nextQuiz.addClass("btn btn-primary text-left");
+    nextQuiz.attr("id", "next-btn"); 
+    $("#quiz1-row").append(nextQuiz);
 
     $("#retake-btn").on("click", function() {
         location.reload();
     });
 
-    $("#next-btn").on("click", function() {
+    nextQuiz.on("click", function() {
         window.location.href = "/quiz2";
     });
 }
@@ -61,10 +74,6 @@ function feedback(index) {
     
     let facecol = $("<div>");
     $(facecol).addClass("col-3");
-    let faceimg = $("<img>");
-    faceimg.attr("src", options[index - index%4]["img"]);
-    faceimg.addClass("quiz1-face");
-    facecol.append(faceimg);
 
     let col = $("<div>");
     $(col).addClass("col-3");
@@ -87,7 +96,7 @@ function feedback(index) {
     let next = $("<button>");
     next.text("Next");
     next.addClass("btn btn-primary");
-    next.attr("id", "next-btn");
+    next.attr("id", "next");
     if (options[index]["correct"] == 1) next.css("background-color", "#6aa84f");
     else next.css("background-color", "red");
     feedbackcol.append(next);
@@ -96,7 +105,7 @@ function feedback(index) {
     $("#quiz1-row").append(col);
     $("#quiz1-row").append(feedbackcol);
 
-    $("#next-btn").on("click", function() {
+    next.on("click", function() {
         if (i==1) get_question(i);
         if (i==2) transitionPage();
     });
