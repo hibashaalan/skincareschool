@@ -1,12 +1,11 @@
 $(document).ready(function () {
-
     let currentIndex = 0;
     const pages = $('.quiz-page');
-    const dots = $('#quiz-progress .progress-dot');
+    const dots = $('.dot');  // Updated selector
 
     function showPage(index) {
         pages.hide().eq(index).show();
-        dots.css('background-color', '#ccc').eq(index).css('background-color', '#2e86de');
+        dots.removeClass('active').eq(index).addClass('active');
 
         $('#prev-question').toggle(index > 0);
         $('#next-question').toggle(index < pages.length - 1);
@@ -14,34 +13,23 @@ $(document).ready(function () {
     }
 
     $('#next-question').click(function () {
-        // Get current question page
         const currentPage = pages.eq(currentIndex);
-    
-        // Check if a radio input is selected
         const selected = currentPage.find('input[type=radio]:checked').length > 0;
-    
+
         if (!selected) {
-            currentPage.find('.quiz-options').addClass('border border-danger rounded p-2');
+            // Add temporary red border to unselected options
+            currentPage.find('label.option-box').addClass('border border-danger');
             setTimeout(() => {
-                currentPage.find('.quiz-options').removeClass('border border-danger');
+                currentPage.find('label.option-box').removeClass('border border-danger');
             }, 2000);
+
             alert('Please select an option before proceeding.');
             return;
         }
-    
+
         if (currentIndex < pages.length - 1) {
             currentIndex++;
             showPage(currentIndex);
-        }
-    });
-
-    $('#case-study-quiz').submit(function (e) {
-        const currentPage = pages.eq(currentIndex);
-        const selected = currentPage.find('input[type=radio]:checked').length > 0;
-    
-        if (!selected) {
-            e.preventDefault(); // Prevent form submission
-            alert('Please select an option before submitting.');
         }
     });
 
@@ -52,19 +40,30 @@ $(document).ready(function () {
         }
     });
 
-    showPage(currentIndex); // initialize
+    $('#case-study-quiz').submit(function (e) {
+        const currentPage = pages.eq(currentIndex);
+        const selected = currentPage.find('input[type=radio]:checked').length > 0;
+
+        if (!selected) {
+            e.preventDefault();
+            alert('Please select an option before submitting.');
+        }
+    });
 
     $('#show-amira-info').click(function () {
         $('#amira-info-modal').fadeIn();
     });
-    
+
     $('#close-modal').click(function () {
         $('#amira-info-modal').fadeOut();
     });
-    
+
+    // Highlight selected image
     $(document).on("change", "input[type=radio]", function () {
         const group = $(this).attr("name");
         $(`input[name=${group}]`).closest("label").removeClass("selected");
         $(this).closest("label").addClass("selected");
     });
+
+    showPage(currentIndex); // initialize
 });
