@@ -134,7 +134,7 @@ body {
   height:70px;
   line-height: 70px;
   background-color: #b6d7a8; 
-  border: 1px solid darkolivegreen;
+  border: 1px solid #333;
   padding: 0px 20px;
   border-radius: 12px;
   text-align: center;
@@ -151,7 +151,7 @@ body {
 }
 
 .correct {
-  border-left: 4px solid darkolivegreen;
+  border-left: 4px solid green;
   background-color: #e6ffed;
 }.incorrect {
   border-left: 4px solid red;
@@ -193,6 +193,7 @@ body {
 }.info-button:hover {
   background-color: #b6d7a8;
 }.option-box {
+  width: 250px;
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 10px;
@@ -221,7 +222,7 @@ body {
     padding: 20px;
   }
 } input[type="radio"]:checked + .option-box {
-  border: 2px solid darkolivegreen;
+  border: 2px solid #333;
   box-shadow: 0 0 10px rgba(85, 107, 47, 0.6); /* green glow */
 }
 /* Remove shadows from images */

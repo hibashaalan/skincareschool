@@ -9,9 +9,8 @@
             <!-- Left: Amira Image & Info -->
             <div class="col-md-4 text-center">
                 <img src="{{ url_for('static', filename='images/amira.png') }}"
-                     alt="Amira" class="img-fluid" style="max-width: 250px;">
-
-                <button type="button" id="show-amira-info" class="btn nav-button btn-info mb-3 q2-buttons">Amira's Info Card</button>
+                     alt="Amira" class="img-fluid">
+                <button type="button" id="show-amira-info" class="btn q2-buttons mb-3">Amira's Info Card</button>
             </div>
 
             <!-- Right: Quiz Area -->
@@ -46,9 +45,9 @@
 
                 <!-- Navigation Buttons -->
                 <div class="text-center mb-4">
-                    <button type="button" class="btn nav-button me-2 q2-buttons" id="prev-question" style="display:none;">Previous</button>
-                    <button type="button" class="btn nav-button me-2 q2-buttons" id="next-question">Next</button>
-                    <button type="submit" class="btn nav-button q2-buttons" id="submit-quiz" style="display:none;">Submit Answers</button>
+                    <button type="button" class="btn q2-buttons me-2" id="next-question">  &emsp;Next&emsp;  </button>
+                    <button type="button" class="btn q2-buttons me-2" id="prev-question" style="display:none;">Previous</button>
+                    <button type="submit" class="btn q2-buttons" id="submit-quiz" style="display:none;">Submit Answers</button>
                 </div>
 
                 <!-- Progress Dots -->
@@ -58,7 +57,7 @@
                         <div class="dot {% if loop.index0 == 1 %}active{% endif %}"></div>
                         {% endfor %}
                     </div>
-                    <p>Progress: {{ current_question }}/{{ questions|length }}</p>
+                    <p id="progress-text">Progress: 1/{{ questions|length }}</p>
                 </div>
             </div>
         </div>

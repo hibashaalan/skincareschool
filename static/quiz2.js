@@ -6,10 +6,12 @@ $(document).ready(function () {
     function showPage(index) {
         pages.hide().eq(index).show();
         dots.removeClass('active').eq(index).addClass('active');
-
+    
         $('#prev-question').toggle(index > 0);
         $('#next-question').toggle(index < pages.length - 1);
         $('#submit-quiz').toggle(index === pages.length - 1);
+    
+        $('#progress-text').text(`Progress: ${index + 1}/${pages.length}`);
     }
 
     $('#next-question').click(function () {
