@@ -4,9 +4,9 @@ body {
     font-family: 'Outfit', sans-serif;
     color: #333;
     font-size:18px;
+    background-color: #f7f4e5; /*Background color for the entire website*/
   }
   header {
-    background-color: #ffffff;
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
