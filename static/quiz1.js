@@ -74,10 +74,6 @@ function feedback(index) {
     
     let facecol = $("<div>");
     $(facecol).addClass("col-3");
-    let faceimg = $("<img>");
-    faceimg.attr("src", options[index - index%4]["img"]);
-    faceimg.addClass("quiz1-face");
-    facecol.append(faceimg);
 
     let col = $("<div>");
     $(col).addClass("col-3");
