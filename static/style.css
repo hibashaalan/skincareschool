@@ -150,6 +150,8 @@ body {
 }
 
 /* quiz2 */
+
+/* fonts and buttons */
 .q2-buttons{
   height:70px;
   line-height: 70px;
@@ -170,6 +172,7 @@ body {
   color:grey;
 }
 
+/* results, progress, active quiz elements */
 .correct {
   border-left: 4px solid green;
   background-color: #e6ffed;
@@ -247,7 +250,9 @@ body {
 .option-box img {
   border: none;
   box-shadow: none;
-}.fixed-height-container{
+}
+/* Fix amira's image height */
+.fixed-height-container{
   height: 450px;         
   overflow: auto;        
   position: relative;

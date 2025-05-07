@@ -1,32 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="container-fluid d-flex justify-content-center align-items-start" style="height: 100%; overflow: hidden;">
     <div class="row w-100 justify-content-center">
       <div class="col-12 col-md-10">
-        <div class="info-card text-center p-4" style="max-height: 90vh; overflow-y: auto;">
-          <h2 class="mb-3">Quiz Results</h2>
-          <p>You got <strong>{{ score }}</strong> out of <strong>{{ total }}</strong> correct.</p>
+        <div class="info-card text-center p-3">
+          <h2 class="mb-2">Quiz Results</h2>
+          <p class="mb-2">You got <strong>{{ score }}</strong> out of <strong>{{ total }}</strong> correct.</p>
 
-          <h4 class="mt-4">Your Selections:</h4>
-            <div class="row justify-content-center">
-              {% for r in results %}
-              <div class="col-6 col-md-4 mb-4 d-flex flex-column align-items-center">
-                <img src="{{ url_for('static', filename='images/' ~ r.image.src) }}"
-                    alt="{{ r.image.caption }}"
-                    class="img-fluid rounded border {{ 'border-success' if r.is_correct else 'border-danger' }}"
-                    style="border-width: 4px; max-height: 120px; object-fit: contain;">
-                <p class="mt-2 small">{{ r.image.caption }}</p>
-                <p class="small {{ 'text-success' if r.is_correct else 'text-danger' }}">
-                  {{ 'Correct' if r.is_correct else 'Incorrect' }}
-                </p>
-              </div>
-              {% endfor %}
+          <h4 class="mb-3">Your Selections:</h4>
+          <div class="row justify-content-center">
+            {% for r in results %}
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-2">
+              <img src="{{ url_for('static', filename='images/' ~ r.image.src) }}"
+                  alt="{{ r.image.caption }}"
+                  class="img-fluid rounded border {{ 'border-success' if r.is_correct else 'border-danger' }}"
+                  style="border-width: 3px; max-height: 90px; object-fit: contain;">
+              <p class="mt-1 small">{{ r.image.caption }}</p>
+              <p class="small {{ 'text-success' if r.is_correct else 'text-danger' }}">
+                {{ 'Correct' if r.is_correct else 'Incorrect' }}
+              </p>
             </div>
+            {% endfor %}
+          </div>
 
-          <a href="{{ url_for('serve_quiz2') }}" class="q2-buttons">Try Again</a>
+          <a href="{{ url_for('serve_quiz2') }}" class="q2-buttons mt-2">Try Again</a>
         </div>
       </div>
     </div>
   </div>
 {% endblock %}
+
 
