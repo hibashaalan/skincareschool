@@ -8,8 +8,10 @@
         <div class="row">
             <!-- Left: Amira Image & Info -->
             <div class="col-md-4 text-center">
-                <img src="{{ url_for('static', filename='images/amira.png') }}"
-                     alt="Amira" class="img-fluid">
+                <div class="fixed-height-container">
+                    <img src="{{ url_for('static', filename='images/oily_skin.png') }}"
+                        alt="Amira" class="fixed-height">
+                </div>
                 <button type="button" id="show-amira-info" class="btn q2-buttons mb-3">Amira's Info Card</button>
             </div>
 
@@ -45,8 +47,8 @@
 
                 <!-- Navigation Buttons -->
                 <div class="text-center mb-4">
-                    <button type="button" class="btn q2-buttons me-2" id="next-question">  &emsp;Next&emsp;  </button>
                     <button type="button" class="btn q2-buttons me-2" id="prev-question" style="display:none;">Previous</button>
+                    <button type="button" class="btn q2-buttons me-2" id="next-question">  &emsp;Next&emsp;  </button>
                     <button type="submit" class="btn q2-buttons" id="submit-quiz" style="display:none;">Submit Answers</button>
                 </div>
 

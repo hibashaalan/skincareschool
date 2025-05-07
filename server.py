@@ -78,62 +78,60 @@ quiz2_questions = [
     {
     "id":0,
     "question": "Pick a cleanser that best suits Amira",
-    "options": ["Gel-based with salicylic acid", "cleanser 2", "cleanser 2"],
+    "options": ["Water Cleanser", "Oil Cleanser"],
     "correct": 0,
     "images": [
-            {"src": "cleanser.png", "caption": "Cleanser 1"},
-            {"src": "cleanser.png", "caption": "Cleanser 2"},
-            {"src": "cleanser.png", "caption": "Cleanser 3"},
+            {"src": "water_cleanser.png", "caption": "Water Cleanser"},
+            {"src": "oil_cleanser.png", "caption": "Oil Cleanser"},
         ]
     },{
     "id":1,
     "question": "Pick a toner that best suits Amira",
-    "options": ["toner 1", "toner 2", "Witch hazel to balance oil"],
+    "options": ["Rose Water Toner", "Green Tea Toner", "Witchhazel Toner"],
     "correct": 2,
     "images": [
-            {"src": "toner_rose.png", "caption": "Toner 1"},
-            {"src": "toner_rose.png", "caption": "Toner 2"},
-            {"src": "toner_rose.png", "caption": "Toner 3"},
+            {"src": "rosewater.png", "caption": "Rose Toner"},
+            {"src": "green_tea_toner.png", "caption": "Green Tea Toner"},
+            {"src": "witch_hazel.png", "caption": "Witchhazel Toner"},
         ]
     },{
     "id":2,
     "question": "Pick a serum that best suits Amira",
-    "options": ["serum 1", "serum 2", "serum 3"],
+    "options": ["Hyalauronic Acid Serum", "Retinol", "Vitamin C Serum"],
     "correct": 0,
     "images": [
-            {"src": "serum_nia.png", "caption": "Serum 1"},
-            {"src": "serum_nia.png", "caption": "Serum 2"},
-            {"src": "serum_nia.png", "caption": "Serum 3"},
+            {"src": "HA_serum.png", "caption": "Hyalauronic Acid Serum"},
+            {"src": "retinol.png", "caption": "Retinol"},
+            {"src": "vit_c.png", "caption": "Vitamin C Serum"},
         ]
     },{
     "id":3,
     "question": "Pick an eye cream that best suits Amira",
-    "options": ["cream 1", "cream 2", "cream 3"],
+    "options": ["Retinol Eye Cream", "Caffeine Eye Cream", "Green Tea Eye Cream"],
     "correct": 1,
     "images": [
-            {"src": "eye_cream.png", "caption": "Eye cream 1"},
-            {"src": "eye_cream.png", "caption": "Eye cream 2"},
-            {"src": "eye_cream.png", "caption": "Eye cream 3"},
+            {"src": "retinol_eye.png", "caption": "Retinol Eye Cream"},
+            {"src": "caff_eye.png", "caption": "Caffeine Eye Cream"},
+            {"src": "green_eye.png", "caption": "Green Tea Eye Cream"},
         ]
     },{
     "id":4,
     "question": "Pick a moisturizer that best suits Amira",
-    "options": ["moisturizer 1", "moisturizer 2", "moisturizer 3"],
+    "options": ["Niacinamide Moisturizer", "Lightweight Gel Moisturizer", "Hyalauronic Acid Moisturizer"],
     "correct": 1,
     "images": [
-            {"src": "moisturizer.png", "caption": "Moisturizer 1"},
-            {"src": "moisturizer.png", "caption": "Moisturizer 2"},
-            {"src": "moisturizer.png", "caption": "Moisturizer 3"},
+            {"src": "NA_cream.png", "caption": "Niacinamide Moisturizer"},
+            {"src": "glycerin.png", "caption": "Lightweight Gel Moisturizer"},
+            {"src": "HA_cream.png", "caption": "Hyalauronic Acid Moisturizer"},
         ]
     },{
     "id":5,
     "question": "Pick a sunscreen that best suits Amira",
-    "options": ["sunscreen 1", "sunscreen 2", "sunscreen 3"],
-    "correct": 1,
+    "options": ["Mineral Sunscreen", "Chemical Sunscreen"],
+    "correct": 0,
     "images": [
-            {"src": "sunscreen.png", "caption": "Sunscreen 1"},
-            {"src": "sunscreen.png", "caption": "Sunscreen 2"},
-            {"src": "sunscreen.png", "caption": "Sunscreen 3"},
+            {"src": "mineral_sun.png", "caption": "Mineral Sunscreen"},
+            {"src": "chemical_sun.png", "caption": "Chemical Sunscreen"},
         ]
     },
 ]
