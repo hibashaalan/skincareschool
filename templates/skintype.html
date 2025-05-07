@@ -8,21 +8,39 @@
   <h6>Click each skin type to learn more</h6>
   <div class="row">
     <!-- Skin Type Cards -->
-    {% for skin in [
-      {'id': 'normal', 'label': 'Normal Skin'},
-      {'id': 'oily', 'label': 'Oily Skin'},
-      {'id': 'dry', 'label': 'Dry Skin'},
-      {'id': 'combo', 'label': 'Combo Skin'}
-    ] %}
     <div class="col-md-3">
-      <a href="#" data-toggle="modal" data-target="#{{ skin.id }}Modal" class="card-link">
+      <a href="#" data-toggle="modal" data-target="#normalModal" class="card-link">
         <div class="info-card">
-          <h3>{{ skin.label }}</h3>
-          <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="{{ skin.label }}" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
+          <h3>Normal Skin</h3>
+          <img src="{{ url_for('static', filename='images/normal_skin.png') }}" alt="Normal Skin" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
         </div>
       </a>
     </div>
-    {% endfor %}
+    <div class="col-md-3">
+      <a href="#" data-toggle="modal" data-target="#dryModal" class="card-link">
+        <div class="info-card">
+          <h3>Dry Skin</h3>
+          <img src="{{ url_for('static', filename='images/dry_skin.png') }}" alt="Dry Skin" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="#" data-toggle="modal" data-target="#oilyModal" class="card-link">
+        <div class="info-card">
+          <h3>Oily Skin</h3>
+          <img src="{{ url_for('static', filename='images/oily_skin.png') }}" alt="Oily Skin" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="#" data-toggle="modal" data-target="#comboModal" class="card-link">
+        <div class="info-card">
+          <h3>Combo Skin</h3>
+          <img src="{{ url_for('static', filename='images/combo_skin.png') }}" alt="Combination Skin" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
+        </div>
+      </a>
+    </div>
+    
   </div>
 </div>
 
@@ -37,7 +55,7 @@
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body d-flex align-items-start">
-        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Normal Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
+        <img src="{{ url_for('static', filename='images/normal_skin.png') }}" alt="Normal Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
         <div class="text-left">
           <p>Normal skin is well-balanced, not too oily or dry. It has a smooth texture and even tone. It is less prone to breakouts and irritation.</p>
           <ul>
@@ -61,7 +79,7 @@
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body d-flex align-items-start">
-        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Oily Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
+        <img src="{{ url_for('static', filename='images/oily_skin.png') }}" alt="Oily Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
         <div class="text-left">
           <p>Oily skin produces excess sebum, leading to shine, visible pores, and frequent breakouts. Look for lightweight, non-comedogenic products.</p>
           <ul>
@@ -84,7 +102,7 @@
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body d-flex align-items-start">
-        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Dry Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
+        <img src="{{ url_for('static', filename='images/dry_skin.png') }}" alt="Dry Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
         <div class="text-left">
           <p>Dry skin lacks moisture and can feel tight or rough. It may appear dull and flaky. Look for rich, hydrating products.</p>
           <ul>
@@ -107,7 +125,7 @@
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body d-flex align-items-start">
-        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Combination Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
+        <img src="{{ url_for('static', filename='images/combo_skin.png') }}" alt="Combination Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
         <div class="text-left">
           <p>Combination skin features both dry and oily areas. The T-zone may be shiny while the cheeks remain dry.</p>
           <ul>
