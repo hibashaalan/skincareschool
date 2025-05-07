@@ -14,7 +14,7 @@ quiz1arr = [
     "correct":0
 }, {
     "id":"1",
-    "img": "/static/images/toner_rose.png",
+    "img": "/static/images/rosewater.png",
     "alt": "rosewater toner",
     "desc": "Rosewater toner",
     "feedback":"Correct! Rosewater is a great ingredient for combination skin because "
@@ -22,14 +22,14 @@ quiz1arr = [
     "correct":1
 }, {
     "id":"2",
-    "img":"/static/images/toner_aloe.png",
+    "img":"/static/images/aloe.png",
     "alt":"aloe toner",
     "desc":"Aloe toner",
     "feedback":"Incorrect! Aloe is a better ingredient for dry skin.",
     "correct":0
 }, {
     "id":"3",
-    "img":"/static/images/toner_witchhazel.png",
+    "img":"/static/images/witch_hazel.png",
     "alt":"witch hazel toner",
     "desc":"Witch hazel toner",
     "feedback":"Incorrect! Witch hazel is a better ingredient for oily skin.",
@@ -50,7 +50,7 @@ quiz1arr = [
     "correct":0
 }, {
     "id":"6",
-    "img":"/static/images/serum_vitc.png",
+    "img":"/static/images/vit_c.png",
     "alt":"vitamin c serum",
     "desc":"Vitamin C serum",
     "feedback":"Correct! Vitamin C is a great ingredient for any brightening concerns.",
