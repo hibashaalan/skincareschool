@@ -4,10 +4,18 @@
     <div class="row w-100 justify-content-center">
       <div class="col-12 col-md-10">
         <div class="info-card text-center p-3">
-          <h2 class="mb-2">Quiz Results</h2>
-          <p class="mb-2">You got <strong>{{ score }}</strong> out of <strong>{{ total }}</strong> correct.</p>
 
-          <h4 class="mb-3">Your Selections:</h4>
+          <h2 class="mb-3">Quiz Results:
+            {% if score >= 4 %}
+              You Passed!
+            {% else %}
+              You Did Not Pass.
+            {% endif %}
+          </h2>
+
+          <p class="mb-2 q2-dgfont">You got <strong>{{ score }}</strong> out of <strong>{{ total }}</strong> correct.</p>
+
+          <h4 class="mb-3 q2-lgfont">The routine you created for Amira was:</h4>
           <div class="row justify-content-center">
             {% for r in results %}
             <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-2">
@@ -22,8 +30,17 @@
             </div>
             {% endfor %}
           </div>
+          
+          <div class="mt-4">
+            {% if score >= 4 %}
+              <a href="{{ url_for('serve_home') }}" class="q2-buttons mt-2">Return Home</a>
+            {% else %}
+              <a href="{{ url_for('serve_skintype') }}" class="q2-buttons mt-2">Review Skin Types</a>
+              <a href="{{ url_for('serve_foundation') }}" class="q2-buttons mt-2">Review Routines</a>
+              <a href="{{ url_for('serve_quiz2') }}" class="q2-buttons mt-2">Try Quiz Again</a>
+            {% endif %}
+          </div>
 
-          <a href="{{ url_for('serve_quiz2') }}" class="q2-buttons mt-2">Try Again</a>
         </div>
       </div>
     </div>

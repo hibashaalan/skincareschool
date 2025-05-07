@@ -152,8 +152,9 @@ body {
 /* quiz2 */
 
 /* fonts and buttons */
-.q2-buttons{
-  height:70px;
+.q2-buttons {
+  display: inline-block; /* allows height & padding to apply */
+  height: 70px;
   line-height: 70px;
   background-color: #b6d7a8; 
   border: 1px solid #333;
@@ -162,6 +163,7 @@ body {
   text-align: center;
   font-family: 'Outfit', sans-serif;
   color: grey;
+  text-decoration: none; /* optional: remove underline */
 }.q2-buttons:hover {
   color: #333;
 }.q2-dgfont{
