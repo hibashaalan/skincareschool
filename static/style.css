@@ -141,7 +141,7 @@ body {
   border:none;
   color:black;
 } #next-btn:hover, #retake-btn:hover {
-  color: #6aa84f;
+  color: #b6d7a8;
 } #quiz1-score {
   font-size:40px;
 } #quiz1-progress {
@@ -151,11 +151,12 @@ body {
 } #quiz1-progress-table {
   border-spacing: 6px;
   border-collapse: separate;
-} #quiz1-progress-dot1, #quiz1-progress-dot2 {
+} #quiz1-progress-dot1, #quiz1-progress-dot2, 
+  #quiz1-progress-dot3, #quiz1-progress-dot4 {
   width:16px;
   height:16px;
   border-radius: 200px;
-  background-color: #6aa84f;
+  background-color: #ccc;
 }
 
 /* quiz2 */

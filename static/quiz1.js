@@ -4,6 +4,8 @@ let answers = {
     id:"0",
     q1:"",
     q2:"",
+    q3:"",
+    q4:"",
     score:0,
 };
 
@@ -13,7 +15,7 @@ function transitionPage() {
     $("#quiz1-progress").empty();
     let score = $("<div>");
     score.attr("id", "quiz1-score");
-    score.text("Your Score: " + answers["score"] + "/2");
+    score.text("Your Score: " + answers["score"] + "/4");
     $("#quiz1-row").append(score);
 
 
@@ -106,8 +108,11 @@ function feedback(index) {
     $("#quiz1-row").append(feedbackcol);
 
     next.on("click", function() {
-        if (i==1) get_question(i);
-        if (i==2) transitionPage();
+        if (i < 4) {
+            get_question(i);
+        } else if (i == 4) {
+            transitionPage();
+        }
     });
 }
 
@@ -138,11 +143,17 @@ function display(options, i) {
     }
 
     if (i==0) {
-        $("#quiz1-progress-dot2").css("background-color", "#ccc");
-        $("#quiz1-progress-text").text("Progress: 1/2");
-    } else {
-        $("#quiz1-progress-dot2").css("background-color", "#6aa84f");
-        $("#quiz1-progress-text").text("Progress: 2/2");
+        $("#quiz1-progress-dot1").css("background-color", "#b6d7a8");
+        $("#quiz1-progress-text").text("Progress: 1/4");
+    } if (i==1) {
+        $("#quiz1-progress-dot2").css("background-color", "#b6d7a8");
+        $("#quiz1-progress-text").text("Progress: 2/4");
+    } if (i==2) {
+        $("#quiz1-progress-dot3").css("background-color", "#b6d7a8");
+        $("#quiz1-progress-text").text("Progress: 3/4");
+    } if (i==3) {
+        $("#quiz1-progress-dot4").css("background-color", "#b6d7a8");
+        $("#quiz1-progress-text").text("Progress: 4/4");
     }
 }
 
@@ -174,8 +185,10 @@ $(document).on("click", ".quiz1-option", function () {
     let index = $(this).attr("id");
     if (options[index]["correct"]) answers["score"] +=1;
     if (i==0) answers["q1"] = index;
-    if (i==1) {
-        answers["q2"] = index;
+    if (i==1) answers["q2"] = index;
+    if (i==2) answers["q3"] = index;
+    if (i==3) { 
+        answers["q4"] = index;
         post_answers();
     }
     i++;
