@@ -57,11 +57,67 @@ quiz1arr = [
     "correct":1
 }, {
     "id":"7",
-    "img":"/static/images/serum_ha.png",
+    "img":"/static/images/HA_serum.png",
     "alt":"hyaluronic acid serum",
     "desc":"Hyaluronic acid serum",
     "feedback":"Incorrect! Hyaluronic acid is a better ingredient for hydration concerns",
     "correct":0
+}, {
+    "id":"8",
+    "img": "",
+    "alt": "combination skin",
+    "desc": "3. Which skin type is characterized by shine, visible pores, and frequent breakouts?",
+    "feeback":"",
+    "correct":0
+},{
+    "id":"9",
+    "img":"/static/images/dry_skin.png",
+    "alt":"Dry Skin",
+    "desc":"Dry Skin",
+    "feedback":"Incorrect! Dry skin is characterized by being dull and flaky.",
+    "correct":0
+}, {
+    "id":"10",
+    "img":"/static/images/oily_skin.png",
+    "alt":"oily skin",
+    "desc":"Oily Skin",
+    "feedback":"Correct! Oily skin is characterized by shine, visible pores, and frequent breakouts.",
+    "correct":1
+}, {
+    "id":"11",
+    "img":"/static/images/normal_skin.png",
+    "alt":"normal skin",
+    "desc":"Normal Skin",
+    "feedback":"Incorrect! Normal skin is characterized by a smooth texture and even tone.",
+    "correct":0
+}, {
+    "id":"12",
+    "img": "/static/images/normal_skin.png",
+    "alt": "normal skin",
+    "desc": "4. Which step is the first in a skincare routine?",
+    "feeback":"",
+    "correct":0
+},{
+    "id":"13",
+    "img":"/static/images/mineral_sun.png",
+    "alt":"mineral sunscreen",
+    "desc":"Sunscreen",
+    "feedback":"Incorrect! Sunscreen is the last step of a skincare routine.",
+    "correct":0
+}, {
+    "id":"14",
+    "img":"/static/images/retinol_eye.png",
+    "alt":"retinol eye cream",
+    "desc":"Eye Cream",
+    "feedback":"Incorrect! Eye cream is the 4th step in a skincare routine.",
+    "correct":0
+}, {
+    "id":"15",
+    "img":"/static/images/water_cleanser.png",
+    "alt":"water cleanser",
+    "desc":"Cleanser",
+    "feedback":"Correct! Cleansing is the first step of a skincare routine.",
+    "correct":1
 }, 
 ]
 
@@ -70,6 +126,8 @@ quiz1answers = [
         "id":"0",
         "q1":"",
         "q2":"",
+        "q3":"",
+        "q4":"",
         "score":0,
     },
 ]
