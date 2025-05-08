@@ -43,7 +43,7 @@ quiz1arr = [
     "correct":0
 }, {
     "id":"5",
-    "img":"/static/images/serum_nia.png",
+    "img":"/static/images/NA.png",
     "alt":"niacinamide serum",
     "desc":"Niacinamide serum",
     "feedback":"Incorrect! Niacinamide is a better ingredient for acne concerns.",
@@ -57,7 +57,7 @@ quiz1arr = [
     "correct":1
 }, {
     "id":"7",
-    "img":"/static/images/serum_ha.png",
+    "img":"/static/images/HA_serum.png",
     "alt":"hyaluronic acid serum",
     "desc":"Hyaluronic acid serum",
     "feedback":"Incorrect! Hyaluronic acid is a better ingredient for hydration concerns",

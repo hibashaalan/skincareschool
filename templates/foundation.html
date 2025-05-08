@@ -70,132 +70,510 @@
 
 <!-- Cleanser Modal -->
 <div class="modal fade" id="cleanserModal" tabindex="-1" role="dialog" aria-labelledby="cleanserModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content p-3">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cleanserModalLabel">Cleanser</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
-        </div>
-        <div class="modal-body d-flex align-items-center">
-            <img src="{{ url_for('static', filename='images/oil_cleanser.png') }}" alt="Oil Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-            <img src="{{ url_for('static', filename='images/water_cleanser.png') }}" alt="Water Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-
-            <p class="mb-0 text-left">
-            Cleansers remove dirt, oil, and makeup from your skin.
-            Use both an oil-based and a water-based cleanser for a thorough cleanse.
-          </p>
-        </div>
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document"><!-- extra-wide -->
+    <div class="modal-content bg-white rounded-lg p-5"><!-- lots of padding + rounded corners -->
+      
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="cleanserModalLabel">
+          Cleanser
+        </h5>
+        <button type="button" class="close position-absolute" 
+                style="right:1rem;top:1rem;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      
+      <div class="modal-body pt-2">
+        <!-- subtitle -->
+        <p class="text-center mb-4">
+          The first and most essential step in skincare. 
+          It removes dirt, sweat, excess oil, makeup, sunscreen, pollution, and bacteria.
+        </p>
+        
+        <!-- images row -->
+        <div class="d-flex justify-content-center mb-4">
+          <img src="{{ url_for('static', filename='images/oil_cleanser.png') }}"
+              alt="Oil Cleanser"
+              class="img-fluid img-gap"
+              style="max-width:180px;">
+          <img src="{{ url_for('static', filename='images/water_cleanser.png') }}"
+              alt="Water Cleanser"
+              class="img-fluid img-gap"
+              style="max-width:180px;">
+        </div>
+        
+        <!-- steps row -->
+        <div class="row mb-3">
+          <div class="col-12 col-md-6 text-center mb-3 mb-md-0">
+            <strong>Step 1: Oil-based cleanser</strong> — Breaks down makeup, sunscreen, and sebum
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <strong>Step 2: Water-based cleanser</strong> — Removes sweat and water-based impurities
+          </div>
+        </div>
+        
+        <!-- note -->
+        <p class="text-center fst-italic">
+          Note: Use both (double cleanse) for a deep clean, or just a water-based cleanser if you don’t wear makeup or heavy sunscreen.
+        </p>
+      </div>
+      <!-- buttons -->
+<div class="modal-footer border-0 justify-content-between">
+  <button type="button" class="btn btn-primary nav-btn" data-next="#tonerModal">
+    Next ›
+  </button>
+</div>
+
     </div>
   </div>
+</div>
+
   
 
 <!-- Toner Modal -->
-<div class="modal fade" id="tonerModal" tabindex="-1" role="dialog" aria-labelledby="tonerModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title" id="tonerModalLabel">Toner</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+<div class="modal fade" id="tonerModal" tabindex="-1" role="dialog"
+    aria-labelledby="tonerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document"><!-- modal-xl for extra width -->
+    <div class="modal-content bg-white rounded-lg p-5"><!-- plenty of padding + rounded corners -->
+      
+      <!-- Header -->
+      <div class="modal-header border-0 justify-content-center pb-0">
+        <h5 class="modal-title text-center" id="tonerModalLabel">
+          Toner
+        </h5>
+        <button type="button" class="close position-absolute" 
+                style="right:1rem;top:1rem;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="modal-body">
-        <img src="{{ url_for('static', filename='images/green_tea_toner.png') }}" alt="Green Tea Toner" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/rosewater.png') }}" alt="Rosewater Toner" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/witch_hazel.png') }}" alt="Witch Hazel Toner" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/aloe.png') }}" alt="Aloe Vera Toner" class="img-fluid mr-3 rounded" style="max-width: 120px;">
 
-        <p class="mb-0 text-left">
-        Toners help to restore your skin’s pH balance and prepare it for serums and moisturizers.
-      </p>
+      <!-- Subtitle -->
+      <div class="modal-body pt-2">
+        <p class="text-center mb-5">
+          Balances skin after cleansing.<br>
+          It removes leftover residue, restores pH, and preps skin to absorb serums/moisturizers.
+        </p>
+
+        <!-- Toner options -->
+        <div class="row text-center">
+          <!-- Dry Skin -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/aloe.png') }}"
+                alt="Aloe Vera Toner"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Dry Skin</strong><br>
+              Goal: Deep hydration<br>
+              Ingredients: Hyaluronic acid, aloe vera, panthenol
+            </p>
+          </div>
+
+          <!-- Oily Skin -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/witch_hazel.png') }}"
+                alt="Witch Hazel Toner"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Oily Skin</strong><br>
+              Goal: Control oil, unclog pores<br>
+              Ingredients: Witch hazel, niacinamide, salicylic acid
+            </p>
+          </div>
+
+          <!-- Normal Skin -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/rosewater.png') }}"
+                alt="Rosewater Toner"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Normal Skin</strong><br>
+              Goal: Maintain hydration<br>
+              Ingredients: Rose water, hyaluronic acid, glycerin
+            </p>
+          </div>
+
+          <!-- Combination Skin -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/green_tea_toner.png') }}"
+                alt="Green Tea Toner"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Combination Skin</strong><br>
+              Goal: Balance dry and oily areas<br>
+              Ingredients: Green tea, niacinamide, rose water
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer border-0 justify-content-between">
+          <button type="button" class="btn btn-outline-secondary nav-btn"
+                  data-prev="#cleanserModal">
+            ‹ Prev
+          </button>
+          <button type="button" class="btn btn-primary nav-btn"
+                  data-next="#serumModal">
+            Next ›
+          </button>
+        </div>        
       </div>
     </div>
   </div>
 </div>
 
 <!-- Serum Modal -->
-<div class="modal fade" id="serumModal" tabindex="-1" role="dialog" aria-labelledby="serumModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title" id="serumModalLabel">Serum</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
-      </div>
-      <div class="modal-body">
-        <img src="{{ url_for('static', filename='images/SA.png') }}" alt="Salyslic Acid" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/HA.png') }}" alt="Hyaluronic Acid" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/NA.png') }}" alt="Niacinamide" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/vit_c.png') }}" alt="Vitamin C" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/retinol.png') }}" alt="Retinol" class="img-fluid mr-3 rounded" style="max-width: 120px;">
+<div class="modal fade" id="serumModal" tabindex="-1" role="dialog"
+    aria-labelledby="serumModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document"><!-- extra-wide -->
+    <div class="modal-content bg-white rounded-lg p-5"><!-- generous padding -->
 
-        <p class="mb-0 text-left">
-        Serums contain concentrated active ingredients like Vitamin C or Hyaluronic Acid that target specific skin concerns.
-      </p>
+      <!-- Header -->
+      <div class="modal-header border-0 justify-content-center pb-0">
+        <h5 class="modal-title text-center" id="serumModalLabel">Serums</h5>
+        <button type="button" class="close position-absolute"
+                style="right:1rem;top:1rem;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+
+      <!-- Subtitle -->
+      <div class="modal-body pt-2">
+        <p class="text-center mb-5">
+          Delivers concentrated ingredients to target specific skin concerns.<br>
+          Apply after toner, before moisturizer.
+        </p>
+
+        <!-- Five-column grid -->
+        <div class="row text-center mb-4">
+          <!-- Hydration -->
+          <div class="col">
+            <img src="{{ url_for('static', filename='images/HA_serum.png') }}"
+                alt="Hyaluronic Acid" class="img-fluid mb-3" style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Hydration:</strong><br>
+              Hyaluronic acid
+            </p>
+          </div>
+
+          <!-- Brightening -->
+          <div class="col">
+            <img src="{{ url_for('static', filename='images/vit_c.png') }}"
+                alt="Vitamin C" class="img-fluid mb-3" style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Brightening:</strong><br>
+              Vitamin C
+            </p>
+          </div>
+
+          <!-- Acne -->
+          <div class="col">
+            <img src="{{ url_for('static', filename='images/SA.png') }}"
+                alt="Salicylic Acid" class="img-fluid mb-3" style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Acne:</strong><br>
+              Salicylic acid
+            </p>
+          </div>
+
+          <!-- Pores -->
+          <div class="col">
+            <img src="{{ url_for('static', filename='images/NA.png') }}"
+                alt="Niacinamide" class="img-fluid mb-3" style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Pores:</strong><br>
+              Niacinamide
+            </p>
+          </div>
+
+          <!-- Anti-aging -->
+          <div class="col">
+            <img src="{{ url_for('static', filename='images/retinol.png') }}"
+                alt="Retinol" class="img-fluid mb-3" style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Anti-aging:</strong><br>
+              Retinol
+            </p>
+          </div>
+        </div>
+
+        <!-- Tip -->
+        <p class="text-center fst-italic small">
+          Tip: Use 2–3 drops, gently press into skin.
+        </p>
+      </div>
+      <div class="modal-footer border-0 justify-content-between">
+        <button type="button" class="btn btn-outline-secondary nav-btn"
+                data-prev="#tonerModal">
+          ‹ Prev
+        </button>
+        <button type="button" class="btn btn-primary nav-btn"
+                data-next="#eyeCreamModal">
+          Next ›
+        </button>
+      </div>
+      
     </div>
   </div>
 </div>
+
 
 <!-- Eye Cream Modal -->
-<div class="modal fade" id="eyeCreamModal" tabindex="-1" role="dialog" aria-labelledby="eyeCreamModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title" id="eyeCreamModalLabel">Eye Cream</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+<div class="modal fade" id="eyeCreamModal" tabindex="-1" role="dialog"
+    aria-labelledby="eyeCreamModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document"><!-- extra-wide -->
+    <div class="modal-content bg-white rounded-lg p-5">
+
+      <!-- Header -->
+      <div class="modal-header border-0 justify-content-center pb-0">
+        <h5 class="modal-title text-center" id="eyeCreamModalLabel">Eye Creams</h5>
+        <button type="button" class="close position-absolute"
+                style="right:1rem;top:1rem;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="modal-body">
-        <img src="{{ url_for('static', filename='images/vc_eye.png') }}" alt="Vitamin C Eye Cream" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/green_eye.png') }}" alt="Green Tea Eye Cream" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/caff_eye.png') }}" alt="Caffeine Eye Cream" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/retinol_eye.png') }}" alt="Retinol Eye Cream" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <p class="mb-0 text-left">
-        Eye creams help reduce puffiness, dark circles, and fine lines around the delicate eye area.
-      </p>
+
+      <!-- Subtitle -->
+      <div class="modal-body pt-2">
+        <p class="text-center mb-5">
+          Targets the delicate under-eye area.<br>
+          Use after serum, before moisturizer.
+        </p>
+
+        <!-- Four-column grid -->
+        <div class="row text-center mb-4">
+          <!-- Dark Circles -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/caff_eye.png') }}"
+                alt="Caffeine Eye Cream"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Dark circles:</strong><br>
+              Caffeine
+            </p>
+          </div>
+
+          <!-- Brightening -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/vc_eye.png') }}"
+                alt="Vitamin C Eye Cream"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Brightening:</strong><br>
+              Vitamin C
+            </p>
+          </div>
+
+          <!-- Puffiness -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/green_eye.png') }}"
+                alt="Green Tea Eye Cream"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Puffiness:</strong><br>
+              Green tea extract, peptides
+            </p>
+          </div>
+
+          <!-- Fine Lines -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/retinol_eye.png') }}"
+                alt="Retinol Eye Cream"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Fine lines:</strong><br>
+              Retinol (low %, gentle), peptides
+            </p>
+          </div>
+        </div>
+
+        <!-- Tip -->
+        <p class="text-center fst-italic small">
+          Tip: Use your ring finger to tap the product on—never rub.
+        </p>
       </div>
+      <div class="modal-footer border-0 justify-content-between">
+        <button type="button" class="btn btn-outline-secondary nav-btn"
+                data-prev="#serumModal">
+          ‹ Prev
+        </button>
+        <button type="button" class="btn btn-primary nav-btn"
+                data-next="#moisturizerModal">
+          Next ›
+        </button>
+      </div>      
     </div>
   </div>
 </div>
+
 
 <!-- Moisturizer Modal -->
 <div class="modal fade" id="moisturizerModal" tabindex="-1" role="dialog" aria-labelledby="moisturizerModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title" id="moisturizerModalLabel">Moisturizer</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document"><!-- extra-wide -->
+    <div class="modal-content bg-white rounded-lg p-5"><!-- generous padding -->
+
+      <!-- Header -->
+      <div class="modal-header border-0 justify-content-center pb-0">
+        <h5 class="modal-title text-center" id="moisturizerModalLabel">
+          Moisturizers
+        </h5>
+        <button type="button" class="close position-absolute"
+                style="right:1rem; top:1rem;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="modal-body">
-        <img src="{{ url_for('static', filename='images/NA_cream.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/HA_cream.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/glycerin.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/cermides.png') }}" alt="Cleanser" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <p class="mb-0 text-left">
-        Moisturizers hydrate and lock in moisture to keep your skin soft, smooth, and healthy.
+
+      <!-- Subtitle -->
+      <div class="modal-body pt-2">
+        <p class="text-center mb-5">
+          Seals in hydration and strengthens the skin barrier.<br>
+          Apply after serum/eye cream, before SPF (AM).
         </p>
+
+        <!-- Four-column grid -->
+        <div class="row text-center mb-4">
+          <!-- Dry Skin -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/cermides.png') }}"
+                alt="Ceramides Cream"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Dry Skin:</strong><br>
+              Thick creams with ceramides, shea butter
+            </p>
+          </div>
+
+          <!-- Oily Skin -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/glycerin.png') }}"
+                alt="Glycerin Gel"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Oily Skin:</strong><br>
+              Lightweight gel with glycerin, aloe
+            </p>
+          </div>
+
+          <!-- Combination Skin -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/NA_cream.png') }}"
+                alt="Niacinamide Lotion"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Combination Skin:</strong><br>
+              Balancing lotions with niacinamide
+            </p>
+          </div>
+
+          <!-- Normal Skin -->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="{{ url_for('static', filename='images/HA_cream.png') }}"
+                alt="Hyaluronic Acid Cream"
+                class="img-fluid mb-3"
+                style="max-width:160px;">
+            <p class="mb-0">
+              <strong>Normal Skin:</strong><br>
+              Hydrating creams with squalane, hyaluronic acid
+            </p>
+          </div>
+        </div>
+
+        <!-- Tip -->
+        <p class="text-center fst-italic small">
+          Tip: Don’t skip—even oily skin needs moisture!
+        </p>
+      </div>
+      <div class="modal-footer border-0 justify-content-between">
+        <button type="button" class="btn btn-outline-secondary nav-btn"
+                data-prev="#eyeCreamModal">
+          ‹ Prev
+        </button>
+        <button type="button" class="btn btn-primary nav-btn"
+                data-next="#sunscreenModal">
+          Next ›
+        </button>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- Sunscreen Modal -->
 <div class="modal fade" id="sunscreenModal" tabindex="-1" role="dialog" aria-labelledby="sunscreenModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title" id="sunscreenModalLabel">Sunscreen</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document"><!-- extra-wide -->
+    <div class="modal-content bg-white rounded-lg p-5"><!-- generous padding -->
+
+      <!-- Header -->
+      <div class="modal-header border-0 justify-content-center pb-0">
+        <h5 class="modal-title text-center" id="sunscreenModalLabel">Sunscreen</h5>
+        <button type="button" class="close position-absolute"
+                style="right:1rem;top:1rem;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="modal-body">
-        <img src="{{ url_for('static', filename='images/mineral_sun.png') }}" alt="Mineral Sunscreen" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <img src="{{ url_for('static', filename='images/chemical_sun.png') }}" alt="Chemical Sunscreen" class="img-fluid mr-3 rounded" style="max-width: 120px;">
-        <p class="mb-0 text-left">
-        Sunscreen protects your skin from UV rays. Apply daily, even when it's cloudy or you're indoors.
-      </p>
+
+      <!-- Subtitle -->
+      <div class="modal-body pt-2">
+        <p class="text-center mb-5">
+          Protects your skin from UV damage.<br>
+          It prevents sunburn, premature aging, dark spots, and skin cancer.<br>
+          Use every morning, even on cloudy days or indoors.
+        </p>
+
+        <!-- Two-column grid -->
+        <div class="row text-center mb-4">
+          <!-- Mineral (Physical) -->
+          <div class="col-12 col-md-6 mb-4">
+            <img src="{{ url_for('static', filename='images/mineral_sun.png') }}"
+                alt="Mineral Sunscreen"
+                class="img-fluid mb-3"
+                style="max-width:180px;">
+            <p class="mb-0">
+              <strong>Mineral (physical):</strong><br>
+              Zinc oxide, titanium dioxide — best for sensitive skin
+            </p>
+          </div>
+
+          <!-- Chemical -->
+          <div class="col-12 col-md-6 mb-4">
+            <img src="{{ url_for('static', filename='images/chemical_sun.png') }}"
+                alt="Chemical Sunscreen"
+                class="img-fluid mb-3"
+                style="max-width:180px;">
+            <p class="mb-0">
+              <strong>Chemical:</strong><br>
+              Avobenzone, octocrylene — lighter feel, blends easily
+            </p>
+          </div>
+        </div>
+
+        <!-- Bold recommendation -->
+        <p class="text-center fw-bold mb-3">
+          Pick SPF 30+ and broad-spectrum (protects from UVA & UVB).<br>
+          Reapply every 2 hours if you’re outside.
+        </p>
+
+        <!-- Tip -->
+        <p class="text-center fst-italic small">
+          Tip: Don’t forget your neck, ears, and hands!
+        </p>
       </div>
+      <div class="modal-footer border-0 justify-content-between">
+        <button type="button" class="btn btn-outline-secondary nav-btn"
+                data-prev="#moisturizerModal">
+          ‹ Prev
+        </button>
+        <button class="cta-button" onclick="location.href='quiz1'">take quiz</button>
     </div>
   </div>
 </div>
 
-
-
-{% endblock %}
+{% endblock content %}
