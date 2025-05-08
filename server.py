@@ -137,7 +137,7 @@ quiz2_questions = [
     "id":0,
     "question": "Pick a cleanser that best suits Amira",
     "options": ["Water Cleanser", "Oil Cleanser"],
-    "correct": 0,
+    "correct": 1,
     "images": [
             {"src": "water_cleanser.png", "caption": "Water Cleanser"},
             {"src": "oil_cleanser.png", "caption": "Oil Cleanser"},
@@ -186,7 +186,7 @@ quiz2_questions = [
     "id":5,
     "question": "Pick a sunscreen that best suits Amira",
     "options": ["Mineral Sunscreen", "Chemical Sunscreen"],
-    "correct": 0,
+    "correct": 1,
     "images": [
             {"src": "mineral_sun.png", "caption": "Mineral Sunscreen"},
             {"src": "chemical_sun.png", "caption": "Chemical Sunscreen"},
