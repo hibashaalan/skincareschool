@@ -48,21 +48,29 @@
 
 <!-- Normal Skin Modal -->
 <div class="modal fade" id="normalModal" tabindex="-1" role="dialog" aria-labelledby="normalModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content p-3">
       <div class="modal-header">
         <h5 class="modal-title" id="normalModalLabel">Normal Skin</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body d-flex align-items-start">
-        <img src="{{ url_for('static', filename='images/normal_skin.png') }}" alt="Normal Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
-        <div class="text-left">
-          <p>Normal skin is well-balanced, not too oily or dry. It has a smooth texture and even tone. It is less prone to breakouts and irritation.</p>
+        <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/normal_skin.png') }}" alt="Normal Skin" class="img-fluid rounded mr-3" style="max-width: 40%;">
+        </div>
+        <div class="text-left align-self-center">
+          <p><strong>Appearance:</strong></p>
           <ul>
             <li>Even texture</li>
-            <li>Even tone</li>
-            <li>Small pores</li>
-            <li>Blemish free</li>
+            <li>Small, barely visible pores</li>
+            <li>No pronounced oiliness or dryness</li>
+          </ul>
+
+          <p><strong>Care Tips:</strong></p>
+          <ul>
+            <li>Gentle, pH-balanced cleanser once or twice daily</li>
+            <li>Light exfoliation 1×/week</li>
+            <li>Daily hydrating toner or essence</li>
           </ul>
         </div>
       </div>
@@ -80,20 +88,29 @@
 
 <!-- Oily Skin Modal -->
 <div class="modal fade" id="oilyModal" tabindex="-1" role="dialog" aria-labelledby="oilyModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content p-3">
       <div class="modal-header">
         <h5 class="modal-title" id="oilyModalLabel">Oily Skin</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body d-flex align-items-start">
-        <img src="{{ url_for('static', filename='images/oily_skin.png') }}" alt="Oily Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
-        <div class="text-left">
-          <p>Oily skin produces excess sebum, leading to shine, visible pores, and frequent breakouts. Look for lightweight, non-comedogenic products.</p>
+        <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/oily_skin.png') }}" alt="Oily Skin" class="img-fluid rounded mr-3" style="max-width: 40%;">
+        </div>
+        <div class="text-left align-self-center">
+          <p><strong>Appearance:</strong></p>
           <ul>
-            <li>Shiny appearance</li>
-            <li>Enlarged pores</li>
-            <li>Prone to acne and blackheads</li>
+            <li>Noticeable shine, especially in the T-zone (forehead, nose, chin)</li>
+            <li>Enlarged pores, prone to blackheads</li>
+            <li>Prone to breakouts and acne</li>
+          </ul>
+
+          <p><strong>Care Tips:</strong></p>
+          <ul>
+            <li>Oil-control cleanser with salicylic acid or zinc PCA</li>
+            <li>Gentle exfoliation (BHA) 1–2×/week to clear pores</li>
+            <li>Lightweight, non-comedogenic moisturizer</li>
           </ul>
         </div>
       </div>
@@ -115,20 +132,29 @@
 
 <!-- Dry Skin Modal -->
 <div class="modal fade" id="dryModal" tabindex="-1" role="dialog" aria-labelledby="dryModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content p-3">
       <div class="modal-header">
         <h5 class="modal-title" id="dryModalLabel">Dry Skin</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body d-flex align-items-start">
-        <img src="{{ url_for('static', filename='images/dry_skin.png') }}" alt="Dry Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
-        <div class="text-left">
-          <p>Dry skin lacks moisture and can feel tight or rough. It may appear dull and flaky. Look for rich, hydrating products.</p>
+        <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/dry_skin.png') }}" alt="Dry Skin" class="img-fluid rounded mr-3" style="max-width: 40%;">
+        </div>
+        <div class="text-left align-self-center">
+          <p><strong>Appearance:</strong></p>
           <ul>
-            <li>Coarse texture</li>
-            <li>Tight pores</li>
-            <li>Visible fine lines</li>
+            <li>Tight or rough patches, especially after cleansing</li>
+            <li>Flakiness or redness around t-zone</li>
+            <li>More visible fine lines</li>
+          </ul>
+
+          <p><strong>Care Tips:</strong></p>
+          <ul>
+            <li>Creamy, non-stripping cleanser (no sulfates)</li>
+            <li>Hydrating masks (sheet or overnight) 1–2×/week</li>
+            <li>Seal in moisture with occlusive ingredients</li>
           </ul>
         </div>
       </div>
@@ -150,21 +176,29 @@
 
 <!-- Combination Skin Modal -->
 <div class="modal fade" id="comboModal" tabindex="-1" role="dialog" aria-labelledby="comboModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content p-3">
       <div class="modal-header">
         <h5 class="modal-title" id="comboModalLabel">Combination Skin</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body d-flex align-items-start">
-        <img src="{{ url_for('static', filename='images/combo_skin.png') }}" alt="Combination Skin" class="img-fluid rounded mr-3" style="max-width: 120px;">
-        <div class="text-left">
-          <p>Combination skin features both dry and oily areas. The T-zone may be shiny while the cheeks remain dry.</p>
+        <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/combo_skin.png') }}" alt="Combination Skin" class="img-fluid rounded mr-3" style="max-width: 40%;">
+        </div>
+        <div class="text-left align-self-center">
+          <p><strong>Appearance:</strong></p>
           <ul>
-            <li>Large pores</li>
-            <li>Thicker texture</li>
-            <li>Dry in some areas</li>
-            <li>Blemished</li>
+            <li>Oily/shiny T-zone (forehead, nose, chin)</li>
+            <li>Dry or normal cheeks</li>
+            <li>Mixed pore sizes (larger in T-zone)</li>
+          </ul>
+
+          <p><strong>Care Tips:</strong></p>
+          <ul>
+            <li>Use a gentle foaming cleanser all over</li>
+            <li>Targeted treatments: BHA in oily zones, hydrating serums on dry areas</li>
+            <li>Layer lightweight and richer products where needed</li>
           </ul>
         </div>
       </div>
