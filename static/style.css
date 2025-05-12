@@ -268,14 +268,19 @@ body {
   box-shadow: none;
 }
 /* Fix amira's image height */
-.fixed-height-container{
-  height: 450px;         
-  overflow: auto;        
-  position: relative;
-}.fixed-height {
-  width: 100%;             
-  object-fit: cover;     
+.fixed-height-container {
+  height: 400px;           /* adjust to whatever box height you need */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;        /* hide any overflow if aspect ratios differ */
+}
+
+/* make the img fill the container while preserving aspect ratio */
+.fixed-height {
   height: 100%;
+  width: auto;
+  object-fit: contain;     /* use “cover” if you’d rather it fill and crop */
 }
 
 
