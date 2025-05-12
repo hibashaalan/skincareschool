@@ -1,5 +1,5 @@
 # Skincare School
 
 To run: 
-cd skincareschool
+cd skincareschool  
 python3 server.py
