@@ -17,18 +17,18 @@
       </a>
     </div>
     <div class="col-md-3">
-      <a href="#" data-toggle="modal" data-target="#dryModal" class="card-link">
-        <div class="info-card">
-          <h3>Dry Skin</h3>
-          <img src="{{ url_for('static', filename='images/dry_skin.png') }}" alt="Dry Skin" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
-        </div>
-      </a>
-    </div>
-    <div class="col-md-3">
       <a href="#" data-toggle="modal" data-target="#oilyModal" class="card-link">
         <div class="info-card">
           <h3>Oily Skin</h3>
           <img src="{{ url_for('static', filename='images/oily_skin.png') }}" alt="Oily Skin" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="#" data-toggle="modal" data-target="#dryModal" class="card-link">
+        <div class="info-card">
+          <h3>Dry Skin</h3>
+          <img src="{{ url_for('static', filename='images/dry_skin.png') }}" alt="Dry Skin" class="img-fluid rounded mb-2" style="width: 100%; height: auto;">
         </div>
       </a>
     </div>
@@ -66,6 +66,14 @@
           </ul>
         </div>
       </div>
+      <div class="modal-footer border-0 justify-content-right">
+        <button type="button" class="btn btn-primary nav-btn"
+        data-dismiss="modal"
+                data-next="#oilyModal">
+          Next ›
+        </button>
+      </div>      
+
     </div>
   </div>
 </div>
@@ -89,6 +97,18 @@
           </ul>
         </div>
       </div>
+      <div class="modal-footer border-0 justify-content-between">
+        <button type="button" class="btn btn-outline-secondary nav-btn"
+        data-dismiss="modal"
+                data-prev="#normalModal">
+          ‹ Prev
+        </button>
+        <button type="button" class="btn btn-primary nav-btn"
+        data-dismiss="modal"
+                data-next="#dryModal">
+          Next ›
+        </button>
+      </div>      
     </div>
   </div>
 </div>
@@ -111,6 +131,18 @@
             <li>Visible fine lines</li>
           </ul>
         </div>
+      </div>
+      <div class="modal-footer border-0 justify-content-between">
+        <button type="button" class="btn btn-outline-secondary nav-btn"
+        data-dismiss="modal"        
+        data-prev="#oilyModal">
+          ‹ Prev
+        </button>
+        <button type="button" class="btn btn-primary nav-btn"
+        data-dismiss="modal"
+                data-next="#comboModal">
+          Next ›
+        </button>
       </div>
     </div>
   </div>
@@ -136,10 +168,16 @@
           </ul>
         </div>
       </div>
+      <div class="modal-footer border-0 justify-content-between">
+        <button type="button" class="btn btn-outline-secondary nav-btn" data-dismiss="modal"
+                data-prev="#dryModal">
+          ‹ Prev
+        </button>
+        <button class="cta-button" onclick="location.href='foundation'">Keep learning</button>
+
     </div>
   </div>
 </div>
 
-<button class="cta-button" onclick="location.href='foundation'">Continue</button>
 
 {% endblock %}

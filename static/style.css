@@ -94,11 +94,15 @@ body {
 .img-gap { 
   margin: 0 10rem; 
 }
-
-
-
-
-
+.btn-primary {
+  background-color: #68a84d;
+  border-color: #28a745;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
 
   /* quiz1 */
 .quiz-heading {
